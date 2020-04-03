@@ -2,11 +2,11 @@
 
 ![React.js Logo](https://reactjs.org/logo-og.png)
 
-## This is a repo for various React.js projects
+## Repo for various React.js projects
 
-## _I will update this Readme as I build my projects_
+### _I will update this Readme as I build my projects_
 
-### This repo will showcase the following:
+#### This repo will showcase the following:
 
 - React.js web apps highlighting several features of the React.js library
 - Demonstrate back-end development using Node.js
