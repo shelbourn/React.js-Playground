@@ -1,5 +1,7 @@
 # React.js Playground
 
+![React.js Logo](https://reactjs.org/logo-og.png)
+
 ## This is a repo for various React.js projects
 
 ## _I will update this Readme as I build my projects_
