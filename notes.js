@@ -152,3 +152,18 @@ const numbers = [1, 2, 3]
 console.log(name) // Returns 'Matt'
 console.log(age) // Returns undefined
 
+/*****
+ * Array Functions
+ */
+
+ // .map() Method
+ // Takes a function as an input and outputs a new array
+
+ const numbers = [1,2,3]
+
+ const doubleNumbers = numbers.map((num) => {
+   return num * 2
+ })
+
+ console.log(numbers) // Returns numbers array
+ console.log(doubleNumbers) // Returns double numbers array
