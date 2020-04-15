@@ -79,3 +79,9 @@ class Person extends Human {
 const person = new Person()
 person.printMyName()
 person.printGender() // printGender() is accessible through inheritance
+
+/*****
+ * Classes, Properties & Methods
+ */
+
+ 
