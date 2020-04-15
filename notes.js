@@ -137,5 +137,17 @@ const filter = (...args) => {
   return args.filter(el => el === 1)
 }
 
+/*****
+ * Destructuring
+ */
 
+ // Array Destructuring
+ // Extract (single or multiple) array elements or object properties and store them in variables
+const numbers = [1, 2, 3]
+[num1, num2] = numbers // Pulls out first 2 index elements from array and assigns them to variables
+[num1, , num3] = numbers // leave blank space to ignore an index element
 
+// Object Destructuring
+{name} = {name: 'Matt', age: 39}
+console.log(name) // Returns 'Matt'
+console.log(age) // Returns undefined
