@@ -66,6 +66,7 @@ class Human { // Human inherits all properties/methods from Person
 
 // Class Inheritance
 class Person extends Human {
+  super() // Must be included to access methods in inherited class
   constructor() {
     this.name = 'Matt'
   }
