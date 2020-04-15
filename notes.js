@@ -148,6 +148,7 @@ const numbers = [1, 2, 3]
 [num1, , num3] = numbers // leave blank space to ignore an index element
 
 // Object Destructuring
-{name} = {name: 'Matt', age: 39}
+{name} = {name: 'Matt', age: 39} // Target property with property name
 console.log(name) // Returns 'Matt'
 console.log(age) // Returns undefined
+
