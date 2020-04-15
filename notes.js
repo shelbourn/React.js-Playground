@@ -87,9 +87,18 @@ person.printGender() // printGender() is accessible through inheritance
  * Classes, Properties & Methods (ES7 Syntax)
  */
 
-// Instead of using myMethods(){...} to add a method
+// Instead of using myMethods(){...} to add a method (eliminates having to use this.myProperty)
 myMethod = () => {...}
 
 // Instead of using a constructor() to add a property
 // constructor() { this.myProperty = 'value }
+// Eliminates having to use this.myMethod()
 myProperty = 'value'
+
+class Human {
+  gender = 'Male'
+
+  printGender = () => {
+    console.log(this.gender) // Still need this. when accessing properties within a method
+  }
+}
