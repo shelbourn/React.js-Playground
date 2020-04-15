@@ -85,6 +85,7 @@ person.printGender() // printGender() is accessible through inheritance
 
 /*****
  * Classes, Properties & Methods (ES7 Syntax)
+ * !!! REQUIRES ES6 Babel Compiler !!!
  */
 
 // Instead of using myMethods(){...} to add a method (eliminates having to use this.myProperty)
@@ -102,3 +103,39 @@ class Human {
     console.log(this.gender) // Still need this. when accessing properties within a method
   }
 }
+
+/*****
+ * Spread & Rest Operator - Ellipses {...}
+ */
+
+ // Spread Operator
+// Used to split up array elements OR object properties
+// Used when creating a new array or object with elements/properties from another array/object
+
+// Rest Operator
+// Used to convert multiple arguments to a function into an array of elements
+
+// Spread Operator - Arrays
+const numbers = [1, 2, 3]
+const newNumbers = [...numbers, 4] // adds 'numbers' elements to newNumbers and adds 4
+
+// Spread Operator - Objects
+const person = {
+  name: 'Matt'
+}
+
+const newPerson = {
+  ...person,
+  age: 39
+}
+
+// Rest Operator - Used with Functions
+
+// 'args' is the user-defined name of rest-created array
+// Below converts the received arguments into an array called 'args'
+const filter = (...args) => {
+  return args.filter(el => el === 1)
+}
+
+
+
