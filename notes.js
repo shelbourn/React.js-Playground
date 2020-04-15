@@ -41,4 +41,10 @@ bundledData.baseData
  * Classes
  */
 
- 
+ // Classes are blueprints for objects
+ // Include properties and methods
+
+ class Person { // Note: class name is Capitalized
+   name = 'Matt' // Property
+   call = () => {...} // Method
+ }
