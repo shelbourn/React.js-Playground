@@ -38,11 +38,14 @@ bundledData.clean
 bundledData.baseData
 
 /*****
- * Classes
+ * Classes, Properties, & Methods (ES6 Syntax)
  */
 
  // Classes are blueprints for objects
  // Include properties and methods
+ // Properties are like variables attached to Classes/Objects
+ // Methods are like functions attached to Classes/Objects
+
  class Person1 { // Note: class name is Capitalized
    name = 'Matt' // Property
    call = () => {...} // Method
@@ -81,7 +84,12 @@ person.printMyName()
 person.printGender() // printGender() is accessible through inheritance
 
 /*****
- * Classes, Properties & Methods
+ * Classes, Properties & Methods (ES7 Syntax)
  */
 
- 
+// Instead of using myMethods(){...} to add a method
+myMethod = () => {...}
+
+// Instead of using a constructor() to add a property
+// constructor() { this.myProperty = 'value }
+myProperty = 'value'
