@@ -43,8 +43,38 @@ bundledData.baseData
 
  // Classes are blueprints for objects
  // Include properties and methods
-
- class Person { // Note: class name is Capitalized
+ class Person1 { // Note: class name is Capitalized
    name = 'Matt' // Property
    call = () => {...} // Method
  }
+
+ // Classes are instatiated using 'new' keyword
+const myPerson = new Person1()
+myPerson.call()
+console.log(myPerson.name)
+
+// Class Example
+class Human { // Human inherits all properties/methods from Person
+  constructor(){ // Constructor
+    this.gender = 'male'
+  }
+
+  printGender() {
+    console.log(this.gender)
+  }
+}
+
+// Class Inheritance
+class Person extends Human {
+  constructor() {
+    this.name = 'Matt'
+  }
+
+  printMyName() {
+    console.log(this.name)
+  }
+}
+
+const person = new Person()
+person.printMyName()
+person.printGender() // printGender() is accessible through inheritance
