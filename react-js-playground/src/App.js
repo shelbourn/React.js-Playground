@@ -6,7 +6,14 @@ class App extends Component {
 	// !State can only be used when a component (App) extends 'Component'
 	// 'State' manages properties from inside a component
 	// State can only be used with class-based React components
-	state
+	// State is a special built-in property, similar to a normal class property
+	state = {
+		persons: [
+			{ name: 'Matt', age: 39 },
+			{ name: 'Nikki', age: 41 },
+			{ name: 'Skylar', age: 2 },
+		],
+	}
 
 	render() {
 		return (
@@ -14,11 +21,20 @@ class App extends Component {
 				<h1>Hi! I'm a React App</h1>
 				<p>This is really working!</p>
 				<button>Switch Name</button>
-				<Person name="Matt" age="39" />
-				<Person name="Nikki" age="41">
+				<Person
+					name={this.state.persons[0].name}
+					age={this.state.persons[0].age}
+				/>
+				<Person
+					name={this.state.persons[1].name}
+					age={this.state.persons[1].age}
+				>
 					My Hobbies: Reading
 				</Person>
-				<Person name="Skylar" age="2" />
+				<Person
+					name={this.state.persons[2].name}
+					age={this.state.persons[2].age}
+				/>
 			</div>
 		)
 	}
