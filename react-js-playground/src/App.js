@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import './App.css'
-// Component must have uppercase name when importing
-// Components with lowercase names are reserved for native HTML syntax
 import Person from './Person/Person'
 
 class App extends Component {
