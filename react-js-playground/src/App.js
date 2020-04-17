@@ -3,6 +3,11 @@ import './App.css'
 import Person from './Person/Person'
 
 class App extends Component {
+	// !State can only be used when a component (App) extends 'Component'
+	// 'State' manages properties from inside a component
+	// State can only be used with class-based React components
+	state
+
 	render() {
 		return (
 			<div className="App">
