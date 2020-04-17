@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
+// Component must have uppercase name when importing
+import Person from './Person/Person'
 
 class App extends Component {
 	render() {
