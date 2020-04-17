@@ -7,6 +7,9 @@ class App extends Component {
 	// 'State' manages properties from inside a component
 	// State can only be used with class-based React components
 	// State is a special built-in property, similar to a normal class property
+	// Whenever state changes the component will re-render and reflect the new state
+	// These changes happen within one and the same component
+	// With props, the changes require external new data through props
 	state = {
 		persons: [
 			{ name: 'Matt', age: 39 },
