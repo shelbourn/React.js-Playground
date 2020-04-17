@@ -5,10 +5,6 @@ import Person from './Person/Person'
 class App extends Component {
 	render() {
 		return (
-			// 'Hy Hobbies...' is passed between the component tags
-			// this type of element is referred to as a 'child' prop
-			// Any element in between the opening and closing component
-			// tags is a children prop
 			<div className="App">
 				<h1>Hi! I'm a React App</h1>
 				<p>This is really working!</p>
