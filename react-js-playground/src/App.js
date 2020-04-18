@@ -27,7 +27,7 @@ class App extends Component {
 		})
 	}
 
-	// Person is an example of functional-based component
+	// Person is an example of functional component
 	render() {
 		return (
 			<div className="App">
