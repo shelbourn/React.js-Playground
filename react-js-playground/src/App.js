@@ -49,10 +49,6 @@ class App extends Component {
 			borderRadius: '10px',
 		}
 
-		// This method keeps the core code of App (return statement of JSX) clean
-		// This is the RECOMMENDED way of outputting conditional content
-		// Initialize the persons variable to 'null'
-		// After initialization 'persons' will be managed by the state
 		let persons = null
 		if (this.state.showPersons) {
 			persons = (
@@ -77,8 +73,6 @@ class App extends Component {
 			)
 		}
 
-		// Return statement is now minimal and clean
-		// We only need to include a call to the 'persons' JS object
 		return (
 			<div className="App">
 				<h1>Hi, I'm a React App</h1>
