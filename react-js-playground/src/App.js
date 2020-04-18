@@ -41,6 +41,7 @@ class App extends Component {
 			cursor: 'pointer',
 		}
 
+		// Outputting conditional content
 		return (
 			<div className="App">
 				<h1>Hi, I'm a React App</h1>
