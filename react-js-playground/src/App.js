@@ -17,8 +17,6 @@ class App extends Component {
 		// DON'T DO THIS: this.state.persons[0].name = 'Matthew';
 		this.setState({
 			persons: [
-				// pass args to 'newName' with .bind(this, 'arg')
-				// .bind(this, 'arg') is more efficient than {() => switchNameHandler('Matthew!!')}
 				{ name: newName, age: 39 },
 				{ name: 'Nikki', age: 41 },
 				{ name: 'Skylar', age: 3 },
