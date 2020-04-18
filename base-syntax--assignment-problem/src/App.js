@@ -19,12 +19,24 @@ class App extends Component {
 	}
 
 	render() {
+		const style = {
+			backgroundColor: 'grey',
+			fontFamily: 'Roboto',
+			textAlign: 'center',
+			margin: '8px',
+			cursor: 'pointer',
+			font: 'blue',
+			border: '2px solid blue',
+			padding: '8px',
+		}
+
 		return (
 			<div className="App">
 				<UserOutput userName={this.state.userNames[0].name} />
 				<UserOutput userName={this.state.userNames[1].name} />
 				<UserOutput userName={this.state.userNames[2].name} />
 				<UserInput
+					style={style}
 					userName={this.state.userNames[0].name}
 					changedName={this.nameChangeHandler}
 				/>
