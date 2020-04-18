@@ -1,4 +1,5 @@
 // {useState} is a React 'hook' pre-defined function
+// {useState} is the most important React hook to know
 import React, { useState } from 'react'
 import './App.css'
 import Person from './Person/Person'
@@ -21,6 +22,7 @@ const app = (props) => {
 		],
 	})
 
+	// Using setState() multiple times to slice up components
 	const [otherState, setOtherState] = useState('some other value')
 
 	console.log(personsState, otherState)
