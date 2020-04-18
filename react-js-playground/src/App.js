@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import Person from './Person/Person'
 
+// App is a class-based component
 class App extends Component {
 	state = {
 		persons: [
@@ -9,6 +10,7 @@ class App extends Component {
 			{ name: 'Nikki', age: 41 },
 			{ name: 'Skylar', age: 2 },
 		],
+		// setState() will not affect the otherState property
 		otherState: 'some other value',
 	}
 
@@ -25,6 +27,7 @@ class App extends Component {
 		})
 	}
 
+	// Person is an example of functional-based component
 	render() {
 		return (
 			<div className="App">
