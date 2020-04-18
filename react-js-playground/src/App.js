@@ -49,6 +49,7 @@ class App extends Component {
 			padding: '8px',
 			cursor: 'pointer',
 			boxShadow: '0 2px 5px cornflowerblue',
+			borderRadius: '10px',
 		}
 
 		// Outputting conditional content
