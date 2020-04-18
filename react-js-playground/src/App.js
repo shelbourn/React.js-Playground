@@ -6,11 +6,16 @@ import Person from './Person/Person'
 // or useState() hook (functional state)
 // Stateful components are referred to as 'Smart' or 'Container' components
 // Stateful components are capable of managing state
+// Stateful components contain the state of your application
 
 // Stateless components ('dumb' or 'presentational' components) do not manage state
 // Our Person component is an example of a stateless component
 // It is best to include as many stateless components as possible
-// and as few stateful components as possible
+// and as few stateful components as possible because data come from the stateless
+// components and the logic happens in the stateful components
+// Apps are much easier to maintain with fewer stateful components because the app's logic is found
+// in one place and the data (coming from the stateless components) can be updated/added to/manipulated
+// as needed
 class App extends Component {
 	state = {
 		persons: [
