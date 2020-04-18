@@ -2,7 +2,15 @@ import React, { Component } from 'react'
 import './App.css'
 import Person from './Person/Person'
 
-// Props and state are the two triggers for DOM re-rendering in React
+// Stateful components included a state property (class-based state)
+// or useState() hook (functional state)
+// Stateful components are referred to as 'Smart' or 'Container' components
+// Stateful components are capable of managing state
+
+// Stateless components ('dumb' or 'presentational' components) do not manage state
+// Our Person component is an example of a stateless component
+// It is best to include as many stateless components as possible
+// and as few stateful components as possible
 class App extends Component {
 	state = {
 		persons: [
