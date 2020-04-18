@@ -33,7 +33,6 @@ class App extends Component {
 	}
 
 	render() {
-		// Defining const for inline CSS styling via JS/JSX
 		const style = {
 			backgroundColor: 'white',
 			font: 'inherit',
