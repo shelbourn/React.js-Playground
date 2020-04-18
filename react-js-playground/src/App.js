@@ -25,8 +25,15 @@ class App extends Component {
 	}
 
 	// Deletes person record when <p> element is clicked
+	// .splice() deletes a record at an index by as many elements as indicated
+	// .slice() creates a copy of a section of an array, or the entire array by using no arguments
+	// Copying the array and then editing that is updating state in an IMMUTABLE fashion
+	// and is the BEST PRACTICE
 	deletePersonHandler = (personIndex) => {
-		const newPersons = this.state.persons
+		// const newPersons = this.state.persons.slice()
+		// An alternative to .slice() is the spread operator [...newPersons]
+		// The spread [...this.state.persons] is the more MODERN approach
+		const newPersons = [...this.state.persons]
 		newPersons.splice(personIndex, 1)
 		this.setState({ persons: newPersons })
 	}
