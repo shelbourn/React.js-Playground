@@ -49,6 +49,7 @@ class App extends Component {
 			borderRadius: '10px',
 		}
 
+		// This method keeps the core code of App (return statement of JSX) clean
 		let persons = null
 		if (this.state.showPersons) {
 			persons = (
@@ -73,6 +74,7 @@ class App extends Component {
 			)
 		}
 
+		// Return statement is now minimal and clean
 		return (
 			<div className="App">
 				<h1>Hi, I'm a React App</h1>
