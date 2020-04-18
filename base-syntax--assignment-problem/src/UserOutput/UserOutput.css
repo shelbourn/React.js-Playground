@@ -3,6 +3,8 @@
 	margin: 16px auto;
 	box-shadow: 0 3px 6px cornflowerblue;
 	border: 2px solid black;
+	border-radius: 10px 35px;
+	background-color: #ccc;
 	text-align: center;
 	font-family: sans-serif;
 	font-variant: small-caps;
