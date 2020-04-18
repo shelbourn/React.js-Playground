@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './App.css'
 import Person from './Person/Person'
 
-// ! 'this.property' syntax refers to property in parent class
 class App extends Component {
 	state = {
 		persons: [
@@ -12,9 +11,6 @@ class App extends Component {
 		],
 	}
 
-	// When referencing this handler do not inlcude ()
-	// Because then the function would be executed as soon as the
-	// code was rendered by the DOM
 	switchNameHandler = () => {
 		console.log('Was clicked!')
 	}
