@@ -10,14 +10,10 @@ class App extends Component {
 			{ name: 'Nikki', age: 41 },
 			{ name: 'Skylar', age: 2 },
 		],
-		// setState() will not affect the otherState property
 		otherState: 'some other value',
 	}
 
 	switchNameHandler = () => {
-		// console.log('Was clicked!')
-		// !DON'T DO THIS! this.state.persons[0].name = 'Matthew'
-		// Must use this.setState({}) to modify/manipulate state data
 		this.setState({
 			persons: [
 				{ name: 'Matthew', age: 39 },
@@ -27,7 +23,6 @@ class App extends Component {
 		})
 	}
 
-	// Person is an example of functional component
 	render() {
 		return (
 			<div className="App">
