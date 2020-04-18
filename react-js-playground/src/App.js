@@ -1,9 +1,20 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import Person from './Person/Person'
 
-// App is a class-based component
+// useState() always returns an array with EXACTLY 2 elements
+// The 1st element is the originally set state
+// the 2nd element is a function that allows us to update the state
 const app = (props) => {
+	const stateArr = useState({
+		persons: [
+			{ name: 'Matt', age: 39 },
+			{ name: 'Nikki', age: 41 },
+			{ name: 'Skylar', age: 2 },
+		],
+		otherState: 'some other value',
+	})
+
 	return (
 		<div className="App">
 			<h1>Hi! I'm a React App</h1>
