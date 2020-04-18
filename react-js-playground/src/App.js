@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import Person from './Person/Person'
 
+// Props and state are the two triggers for DOM re-rendering in React
 class App extends Component {
 	state = {
 		persons: [
