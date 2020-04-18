@@ -25,9 +25,6 @@ class App extends Component {
 	}
 
 	// Deletes person record when <p> element is clicked
-	//!BELOW IS BAD PRACTICE BECAUSE IT OPERATES ON THE ORIGINAL STATE
-	//!AND MODIFIES IT
-	//!THE PROPER METHOD IS TO COPY THE ARRAY IN STATE AND USE THAT
 	deletePersonHandler = (personIndex) => {
 		const newPersons = this.state.persons
 		newPersons.splice(personIndex, 1)
