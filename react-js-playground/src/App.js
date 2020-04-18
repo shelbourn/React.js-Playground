@@ -33,9 +33,6 @@ class App extends Component {
 		})
 	}
 
-	// This syntax allows for use of '.this' to refer to App class
-	// togglePersonsHandler () {} syntax does not allow for use of '.this' syntax to refer to App class
-	// Below is the RECOMMENDED syntax
 	togglePersonsHandler = () => {
 		const doesShow = this.state.showPersons
 		this.setState({ showPersons: !doesShow })
