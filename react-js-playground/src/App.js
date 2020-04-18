@@ -13,8 +13,6 @@ class App extends Component {
 	}
 
 	switchNameHandler = (newName) => {
-		// console.log('Was clicked!');
-		// DON'T DO THIS: this.state.persons[0].name = 'Matthew';
 		this.setState({
 			persons: [
 				{ name: newName, age: 39 },
@@ -49,7 +47,6 @@ class App extends Component {
 				/>
 			</div>
 		)
-		// return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
 	}
 }
 
