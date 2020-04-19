@@ -15,30 +15,31 @@ class App extends Component {
 
 	// Changes name when user types input
 	nameChangedHandler = (event, id) => {
+		// Returns index of person with matching ID as arg
 		const personIndex = this.state.persons.findIndex((p) => {
 			return p.id === id
 		})
 
-		// More modern approach
-		// Spread operator for object
+		//!MUST MODIFY COPY OF EXISTING STATE, NOT ORIGINAL!
+		// Creates a duplicate object of person at returned index
 		const person = {
 			...this.state.persons[personIndex],
 		}
 
-		// Alternate to above code
-		// const person = Object.assign({}, this.state.persons[personIndex])
-
+		// Assigns person.name to handler input
 		person.name = event.target.value
 
+		// Creates duplicate of state array
 		const newPersons = [...this.state.persons]
+		// Assigns updated/copied person value to new array at same index
 		newPersons[personIndex] = person
 
+		// Updates state with copied/updated newPersons array
 		this.setState({ persons: newPersons })
 	}
 
 	// Deletes person record when the <Person> element is clicked
 	deletePersonHandler = (personIndex) => {
-		// or const newPersons = this.state.persons.slice()
 		const newPersons = [...this.state.persons]
 		newPersons.splice(personIndex, 1)
 		this.setState({ persons: newPersons })
