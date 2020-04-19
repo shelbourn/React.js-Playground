@@ -14,14 +14,26 @@ class App extends Component {
 	}
 
 	// Changes name when user types input
-	nameChangedHandler = (event) => {
-		this.setState({
-			persons: [
-				{ name: 'Matt', age: 39 },
-				{ name: event.target.value, age: 41 },
-				{ name: 'Skylar', age: 3 },
-			],
+	nameChangedHandler = (event, id) => {
+		const personIndex = this.state.persons.findIndex((p) => {
+			return p.id === id
 		})
+
+		// More modern approach
+		// Spread operator for object
+		const person = {
+			...this.state.persons[personIndex],
+		}
+
+		// Alternate to above code
+		// const person = Object.assign({}, this.state.persons[personIndex])
+
+		person.name = event.target.value
+
+		const persons = [...this.state.persons]
+		persons[personIndex] = person
+
+		this.setState({ persons: persons })
 	}
 
 	// Deletes person record when the <Person> element is clicked
@@ -62,6 +74,7 @@ class App extends Component {
 								name={person.name}
 								age={person.age}
 								key={person.id}
+								changed={(event) => this.nameChangedHandler(event, person.id)}
 							/>
 						)
 					})}
