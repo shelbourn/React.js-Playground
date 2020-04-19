@@ -92,13 +92,20 @@ class App extends Component {
 		}
 
 		// Array of CSS class names
-		// .join('') converts array to string of text "red bold" which is a valid CSS class designation
-		let classes = ['red', 'bold'].join('')
+		// .join(' ') converts array to string of text "red bold" which is a valid CSS class designation
+		// Pass 1 SPACE as the .join() argument
+		// Dynamically assigning CSS classes
+		let classes = []
+		if (this.state.persons.length <= 1) {
+			classes.push('red bold')
+		} else if (this.state.persons.length < 3) {
+			classes.push('red')
+		}
 
 		return (
 			<div className="App">
 				<h1>Hi, I'm a React App</h1>
-				<p>This is really working!</p>
+				<p className={classes}>This is really working!</p>
 				<button style={style} onClick={this.togglePersonsHandler}>
 					{buttonText}
 				</button>
