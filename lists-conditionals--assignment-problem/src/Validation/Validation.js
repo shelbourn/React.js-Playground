@@ -5,6 +5,10 @@ const validation = (props) => {
 	if (props.inputLength <= 5) {
 		validationMessage = "Sorry! Your text input isn't long enough yet!"
 	}
-	return validationMessage
+	return (
+		<div>
+			<p>{validationMessage}</p>
+		</div>
+	)
 }
 export default validation

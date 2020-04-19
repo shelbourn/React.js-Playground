@@ -15,7 +15,24 @@ class App extends Component {
 		})
 	}
 
+	deleteCharHandler = (index) => {
+		const text = this.state.userInput.split('')
+		text.splice(index, 1)
+		const updatedText = text.join('')
+		this.setState({ userInput: updatedText })
+	}
+
 	render() {
+		const characters = this.state.userInput.split('').map((ch, index) => {
+			return (
+				<Char
+					character={ch}
+					key={index}
+					clicked={() => this.deleteCharHandler(index)}
+				/>
+			)
+		})
+
 		return (
 			<div className="App">
 				<ol>
@@ -57,7 +74,7 @@ class App extends Component {
 				/>
 				<p>{this.state.userInput}</p>
 				<Validation inputLength={this.state.userInput.length} />
-				<Char />
+				{characters}
 			</div>
 		)
 	}
