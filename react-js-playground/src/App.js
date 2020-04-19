@@ -51,6 +51,8 @@ class App extends Component {
 
 		let persons = null
 
+		// Key properties (props) are required by React
+		// Key properties are built-in to React, but you have to define them
 		if (this.state.showPersons) {
 			persons = (
 				<div>
