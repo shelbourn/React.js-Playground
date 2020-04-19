@@ -5,9 +5,9 @@ import Person from './Person/Person'
 class App extends Component {
 	state = {
 		persons: [
-			{ name: 'Matt', age: 39 },
-			{ name: 'Nikki', age: 41 },
-			{ name: 'Sky', age: 2 },
+			{ id: '1', name: 'Matt', age: 39 },
+			{ id: '2', name: 'Nikki', age: 41 },
+			{ id: '3', name: 'Sky', age: 2 },
 		],
 		otherState: 'some other value',
 		showPersons: false,
@@ -53,6 +53,10 @@ class App extends Component {
 
 		// Key properties (props) are required by React
 		// Key properties are built-in to React, but you have to define them
+		// Key props help to efficiently update React components
+		// Key props must be unique identifiers for each item
+
+		// Code to manage the 'Persons' array (list)
 		if (this.state.showPersons) {
 			persons = (
 				<div>
@@ -62,6 +66,7 @@ class App extends Component {
 								click={() => this.deletePersonHandler(index)}
 								name={person.name}
 								age={person.age}
+								key={person.id}
 							/>
 						)
 					})}
