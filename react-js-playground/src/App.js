@@ -85,7 +85,7 @@ class App extends Component {
 				</div>
 			)
 
-			// Dynamically styling output
+			// Dynamically styling output if 'showPersons' is true
 			style.backgroundColor = 'indianRed'
 			style.color = 'white'
 			buttonText = 'Hide Names'
