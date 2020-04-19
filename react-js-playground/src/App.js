@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
+import Radium from 'radium'
 import Person from './Person/Person'
 
 class App extends Component {
@@ -91,10 +92,6 @@ class App extends Component {
 			buttonText = 'Hide Names'
 		}
 
-		// Array of CSS class names
-		// .join(' ') converts array to string of text "red bold" which is a valid CSS class designation
-		// Pass 1 SPACE as the .join() argument
-		// Dynamically assigning CSS classes
 		const classes = []
 		if (this.state.persons.length <= 2) {
 			classes.push('red') // classes = ['red']
@@ -103,7 +100,6 @@ class App extends Component {
 			classes.push('bold') // classes = ['red', 'bold']
 		}
 
-		// Must use 'classes.join(' ') below to convert 'classes' array into string of class names
 		return (
 			<div className="App">
 				<h1>Hi, I'm a React App</h1>
