@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Validation from './Validation/Validation'
+import Char from './Char/Char'
 
 class App extends Component {
 	state = {
@@ -11,48 +12,44 @@ class App extends Component {
 		this.setState({ userInput: event.target.value })
 	}
 
+	deleteCharHandler = (index) => {
+		const text = this.state.userInput.split('')
+		text.splice(index, 1)
+		const updatedText = text.join('')
+		this.setState({ userInput: updatedText })
+	}
+
 	render() {
+		const characters = this.state.userInput.split('').map((ch, index) => {
+			return (
+				<Char
+					character={ch}
+					key={index}
+					clicked={() => this.deleteCharHandler(index)}
+				/>
+			)
+		})
+
+		const style = {
+			color: 'steelBlue',
+			textDecoration: 'underline',
+		}
+
 		return (
 			<div className="App">
-				<ol>
-					<li>
-						Create an input field (in App component) with a change listener
-						which outputs the length of the entered text below it (e.g. in a
-						paragraph).
-					</li>
-					<li>
-						Create a new component (=> ValidationComponent) which receives the
-						text length as a prop
-					</li>
-					<li>
-						Inside the ValidationComponent, either output "Text too short" or
-						"Text long enough" depending on the text length (e.g. take 5 as a
-						minimum length)
-					</li>
-					<li>
-						Create another component (=> CharComponent) and style it as an
-						inline box (=> display: inline-block, padding: 16px, text-align:
-						center, margin: 16px, border: 1px solid black).
-					</li>
-					<li>
-						Render a list of CharComponents where each CharComponent receives a
-						different letter of the entered text (in the initial input field) as
-						a prop.
-					</li>
-					<li>
-						When you click a CharComponent, it should be removed from the
-						entered text.
-					</li>
-				</ol>
-				<p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
-				<hr />
+				<h4 style={style}>Enter Some Text Below:</h4>
 				<input
 					type="text"
 					onChange={this.inputChangeHandler}
 					value={this.state.userInput}
 				/>
+				<h4 style={style}>Your Entered Text:</h4>
 				<p>{this.state.userInput}</p>
+				<h4 style={style}>Text Input Length Validation</h4>
 				<Validation inputLength={this.state.userInput.length} />
+				<h4 style={style}>Text-to-Tile Output</h4>
+				{characters}
+				<h5>Click on Any Tile to Delete It!</h5>
 			</div>
 		)
 	}
