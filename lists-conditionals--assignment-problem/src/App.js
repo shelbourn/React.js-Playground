@@ -22,15 +22,15 @@ class App extends Component {
 						which outputs the length of the entered text below it (e.g. in a
 						paragraph).
 					</li> */}
-					<li>
+					{/* <li>
 						Create a new component (=> ValidationComponent) which receives the
 						text length as a prop
 					</li>
 					<li>
 						Inside the ValidationComponent, either output "Text too short" or
 						"Text long enough" depending on the text length (e.g. take 5 as a
-						minimum length)
-					</li>
+						minimum length) */}
+					{/* </li> */}
 					<li>
 						Create another component (=> CharComponent) and style it as an
 						inline box (=> display: inline-block, padding: 16px, text-align:
@@ -54,6 +54,7 @@ class App extends Component {
 					value={this.state.userInput}
 				/>
 				<p>{this.state.userInput}</p>
+				<Validation inputLength={this.state.userInput.length} />
 			</div>
 		)
 	}

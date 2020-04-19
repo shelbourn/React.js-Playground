@@ -1,4 +1,10 @@
 import React from 'react'
 
-const validation = (props) => {}
+const validation = (props) => {
+	let validationMessage = 'Congrats! Your text input is long enough!'
+	if (props.inputLength <= 5) {
+		validationMessage = "Sorry! Your text input isn't long enough yet!"
+	}
+	return validationMessage
+}
 export default validation
