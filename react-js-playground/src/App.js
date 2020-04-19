@@ -91,6 +91,10 @@ class App extends Component {
 			buttonText = 'Hide Names'
 		}
 
+		// Array of CSS class names
+		// .join('') converts array to string of text "red bold" which is a valid CSS class designation
+		let classes = ['red', 'bold'].join('')
+
 		return (
 			<div className="App">
 				<h1>Hi, I'm a React App</h1>
