@@ -95,17 +95,19 @@ class App extends Component {
 		// .join(' ') converts array to string of text "red bold" which is a valid CSS class designation
 		// Pass 1 SPACE as the .join() argument
 		// Dynamically assigning CSS classes
-		let classes = []
+		const classes = []
+		if (this.state.persons.length <= 2) {
+			classes.push('red') // classes = ['red']
+		}
 		if (this.state.persons.length <= 1) {
-			classes.push('red bold')
-		} else if (this.state.persons.length < 3) {
-			classes.push('red')
+			classes.push('bold') // classes = ['red', 'bold']
 		}
 
+		// Must use 'classes.join(' ') below to convert 'classes' array into string of class names
 		return (
 			<div className="App">
 				<h1>Hi, I'm a React App</h1>
-				<p className={classes}>This is really working!</p>
+				<p className={classes.join(' ')}>This is really working!</p>
 				<button style={style} onClick={this.togglePersonsHandler}>
 					{buttonText}
 				</button>
