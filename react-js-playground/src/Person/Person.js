@@ -1,4 +1,3 @@
-// Component file names start with capital letter (Pascal Case)
 import React from 'react'
 import './Person.css'
 
