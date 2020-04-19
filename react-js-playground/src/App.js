@@ -53,14 +53,17 @@ class App extends Component {
 
 	render() {
 		const style = {
-			backgroundColor: 'lightGrey',
+			backgroundColor: 'lightGreen',
+			color: 'black',
 			font: 'inherit',
 			border: '2px solid black',
 			padding: '8px',
 			cursor: 'pointer',
-			boxShadow: '0 2px 5px cornflowerblue',
+			boxShadow: '0 2px 5px darkGray',
 			borderRadius: '10px',
 		}
+
+		let buttonText = 'Show Names'
 
 		let persons = null
 
@@ -81,6 +84,11 @@ class App extends Component {
 					})}
 				</div>
 			)
+
+			// Dynamically styling output
+			style.backgroundColor = 'indianRed'
+			style.color = 'white'
+			buttonText = 'Hide Names'
 		}
 
 		return (
@@ -88,7 +96,7 @@ class App extends Component {
 				<h1>Hi, I'm a React App</h1>
 				<p>This is really working!</p>
 				<button style={style} onClick={this.togglePersonsHandler}>
-					Show/Hide Names
+					{buttonText}
 				</button>
 				{persons}
 			</div>
