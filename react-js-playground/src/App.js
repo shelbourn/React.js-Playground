@@ -51,11 +51,6 @@ class App extends Component {
 
 		let persons = null
 
-		// Key properties (props) are required by React
-		// Key properties are built-in to React, but you have to define them
-		// Key props help to efficiently update React components
-		// Key props must be unique identifiers for each item
-
 		// Code to manage the 'Persons' array (list)
 		if (this.state.showPersons) {
 			persons = (
