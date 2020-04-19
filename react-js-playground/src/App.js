@@ -30,10 +30,10 @@ class App extends Component {
 
 		person.name = event.target.value
 
-		const persons = [...this.state.persons]
-		persons[personIndex] = person
+		const newPersons = [...this.state.persons]
+		newPersons[personIndex] = person
 
-		this.setState({ persons: persons })
+		this.setState({ persons: newPersons })
 	}
 
 	// Deletes person record when the <Person> element is clicked
