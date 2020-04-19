@@ -1,8 +1,11 @@
 .Person {
 	width: 60%;
 	margin: 16px auto;
-	border: 1px solid #eee;
-	box-shadow: 0 2px 3px #ccc;
+	border: 2px solid black;
+	box-shadow: 0 2px 3px cornflowerblue;
+	border-radius: 15px;
 	padding: 16px;
 	text-align: center;
+	font-family: sans-serif;
+	font-variant: small-caps;
 }
