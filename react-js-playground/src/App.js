@@ -20,7 +20,6 @@ class App extends Component {
 			return p.id === id
 		})
 
-		//!MUST MODIFY COPY OF EXISTING STATE, NOT ORIGINAL!
 		// Creates a duplicate object of person at returned index
 		const person = {
 			...this.state.persons[personIndex],
@@ -31,6 +30,7 @@ class App extends Component {
 
 		// Creates duplicate of state array
 		const newPersons = [...this.state.persons]
+
 		// Assigns updated/copied person value to new array at same index
 		newPersons[personIndex] = person
 
