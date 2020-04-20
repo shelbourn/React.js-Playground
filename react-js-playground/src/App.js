@@ -90,13 +90,6 @@ class App extends Component {
 			assignedClasses.push(classes.bold) // classes = ['red', 'bold']
 		}
 
-		// Testing error handling
-		const rndNum = Math.random()
-
-		if (rndNum > 0.7) {
-			throw new Error('Something went wrong!')
-		}
-
 		return (
 			<div className={classes.App}>
 				<h1>Hi, I'm a React App</h1>
