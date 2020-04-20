@@ -105,8 +105,6 @@ class App extends Component {
 			classes.push('bold') // classes = ['red', 'bold']
 		}
 
-		// Must wrap the entire app (from roo <div> to </div> with <StyleRoot>)
-		// For Radium to render media queries (@media) and other features
 		return (
 			<StyleRoot>
 				<div className="App">
