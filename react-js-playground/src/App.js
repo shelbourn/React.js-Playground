@@ -66,7 +66,7 @@ class App extends Component {
 				<div>
 					{this.state.persons.map((person, index) => {
 						return (
-							// Key must always be on the outer wrapper of an element
+							// Key must always be on the outer wrapper of an element using the .map() method
 							<ErrorBoundary key={person.id}>
 								<Person
 									click={() => this.deletePersonHandler(index)}
