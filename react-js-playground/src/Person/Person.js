@@ -1,5 +1,4 @@
 import React from 'react'
-import Radium from 'radium'
 import './Person.css'
 
 // Media queries with Radium
@@ -20,4 +19,4 @@ const person = (props) => {
 	)
 }
 
-export default Radium(person)
+export default person
