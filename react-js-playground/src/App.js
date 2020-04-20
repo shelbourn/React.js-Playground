@@ -58,6 +58,9 @@ class App extends Component {
 
 		let persons = null
 
+		// Setting btnClass to an empty string by default
+		// if showPersons === true then btnClass will be passed with .Red which appends
+		// the .Red class to the .App class which is assigned to the entire <div>
 		let btnClass = ''
 
 		// Code to manage the 'Persons' array (list)
