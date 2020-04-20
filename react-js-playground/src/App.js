@@ -1,6 +1,26 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import './App.css'
 import Person from './Person/Person'
+
+// When using styled-components you must use normal CSS syntax
+// Not JS flavor CSS syntax
+// Use '&' selector before pseudo-classes
+const StyledButton = styled.button`
+	background-color: ${(props) => (props.alt ? 'indianred' : 'mediumseagreen')};
+	color: white;
+	font: inherit;
+	border: 2px solid black;
+	padding: 8px;
+	cursor: pointer;
+	box-shadow: 0 2px 5px darkGray;
+	border-radius: 10px;
+
+	&:hover {
+		background-color: ${(props) => (props.alt ? 'lightcoral' : 'lightgreen')};
+		color: black;
+	}
+`
 
 class App extends Component {
 	state = {
@@ -8,6 +28,7 @@ class App extends Component {
 			{ id: '1', name: 'Matt', age: 39 },
 			{ id: '2', name: 'Nikki', age: 41 },
 			{ id: '3', name: 'Sky', age: 2 },
+			{ id: '4', name: 'Audrey', age: 70 },
 		],
 		otherState: 'some other value',
 		showPersons: false,
@@ -52,21 +73,6 @@ class App extends Component {
 	}
 
 	render() {
-		const style = {
-			backgroundColor: 'mediumseagreen',
-			color: 'white',
-			font: 'inherit',
-			border: '2px solid black',
-			padding: '8px',
-			cursor: 'pointer',
-			boxShadow: '0 2px 5px darkGray',
-			borderRadius: '10px',
-			':hover': {
-				backgroundColor: 'lightGreen',
-				color: 'black',
-			},
-		}
-
 		let buttonText = 'Show Names'
 
 		let persons = null
@@ -88,11 +94,7 @@ class App extends Component {
 					})}
 				</div>
 			)
-
 			// Dynamically styling output if 'showPersons' is true
-			style.backgroundColor = 'indianRed'
-			style[':hover'] = { backgroundColor: 'lightcoral' }
-			style.color = 'white'
 			buttonText = 'Hide Names'
 		}
 
@@ -108,9 +110,12 @@ class App extends Component {
 			<div className="App">
 				<h1>Hi, I'm a React App</h1>
 				<p className={classes.join(' ')}>This is really working!</p>
-				<button style={style} onClick={this.togglePersonsHandler}>
+				<StyledButton
+					alt={this.state.showPersons}
+					onClick={this.togglePersonsHandler}
+				>
 					{buttonText}
-				</button>
+				</StyledButton>
 				{persons}
 			</div>
 		)
