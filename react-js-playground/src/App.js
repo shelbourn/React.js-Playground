@@ -55,7 +55,7 @@ class App extends Component {
 	render() {
 		const style = {
 			backgroundColor: 'mediumseagreen',
-			color: 'black',
+			color: 'white',
 			font: 'inherit',
 			border: '2px solid black',
 			padding: '8px',
@@ -64,6 +64,7 @@ class App extends Component {
 			borderRadius: '10px',
 			':hover': {
 				backgroundColor: 'lightGreen',
+				color: 'black',
 			},
 		}
 
@@ -91,7 +92,7 @@ class App extends Component {
 
 			// Dynamically styling output if 'showPersons' is true
 			style.backgroundColor = 'indianRed'
-			style[':hover'].backgroundColor = 'lightcoral'
+			style[':hover'] = { backgroundColor: 'lightcoral' }
 			style.color = 'white'
 			buttonText = 'Hide Names'
 		}
