@@ -3,11 +3,6 @@ import styled from 'styled-components'
 import './App.css'
 import Person from './Person/Person'
 
-// When using styled-components you must use normal CSS syntax
-// Not JS flavor CSS syntax
-// Use '&' selector before pseudo-classes
-// styled-components and Radium are good solutions but
-// don't have great IDE support and they add a lot of code
 const StyledButton = styled.button`
 	background-color: ${(props) => (props.alt ? 'indianred' : 'mediumseagreen')};
 	color: white;
