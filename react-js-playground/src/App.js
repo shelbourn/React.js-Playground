@@ -113,4 +113,6 @@ class App extends Component {
 	}
 }
 
-export default App
+// Radium is a higher-order element
+// This wraps our App element in Radium which adds syntax/functionality
+export default Radium(App)
