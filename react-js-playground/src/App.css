@@ -33,3 +33,8 @@
 .App button.Red:hover {
 	background-color: lightcoral;
 }
+
+/* Use the global selector to specify classes to be part of global scope 
+Example:
+:global .App {...} 
+*/
