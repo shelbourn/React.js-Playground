@@ -94,8 +94,8 @@ class App extends Component {
 			assignedClasses.push(classes.bold) // classes = ['red', 'bold']
 		}
 
-		// JSX/React components that are rendered to the screen go
-		//
+		//! JSX/React components that are rendered to the screen go
+		//! in the return statement within the render() method
 		return (
 			<div className={classes.App}>
 				<h1>Hi, I'm a React App</h1>
