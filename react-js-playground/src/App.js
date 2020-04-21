@@ -3,6 +3,7 @@ import classes from './App.css'
 import Person from './Person/Person'
 
 class App extends Component {
+	//! Logic and global variables go in the main class body
 	state = {
 		persons: [
 			{ id: '1', name: 'Matt', age: 39 },
@@ -53,6 +54,9 @@ class App extends Component {
 	}
 
 	render() {
+		//! Anything that is rendered to the screen including logic
+		//! that affects rendered components goes in the render()
+		//! method body
 		let buttonText = 'Show Names'
 
 		let persons = null
@@ -90,6 +94,8 @@ class App extends Component {
 			assignedClasses.push(classes.bold) // classes = ['red', 'bold']
 		}
 
+		// JSX/React components that are rendered to the screen go
+		//
 		return (
 			<div className={classes.App}>
 				<h1>Hi, I'm a React App</h1>
