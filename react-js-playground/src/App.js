@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classes from './App.css'
-import Person from './Persons/Person/Person'
+import Person from './components/Persons/Person/Person'
 
 class App extends Component {
 	//! Logic and global variables go in the main class body
