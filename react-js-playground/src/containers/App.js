@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import classes from './App.css'
 import Person from '../components/Persons/Person/Person'
+import Cockpit from '../components/Cockpit/Cockpit'
 
 class App extends Component {
 	//! Logic and global variables go in the main class body
