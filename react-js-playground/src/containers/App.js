@@ -3,6 +3,7 @@ import classes from './App.css'
 import Person from '../components/Persons/Person/Person'
 import Cockpit from '../components/Cockpit/Cockpit'
 
+// App is a class-based component because it manages state
 class App extends Component {
 	//! Logic and global variables go in the main class body
 	state = {
@@ -68,18 +69,7 @@ class App extends Component {
 		if (this.state.showPersons) {
 			persons = (
 				<div>
-					{this.state.persons.map((person, index) => {
-						return (
-							// Key must always be on the outer wrapper of an element using the .map() method
-							<Person
-								key={person.id}
-								click={() => this.deletePersonHandler(index)}
-								name={person.name}
-								age={person.age}
-								changed={(event) => this.nameChangedHandler(event, person.id)}
-							/>
-						)
-					})}
+					{this.state.}
 				</div>
 			)
 			// Dynamically styling output if 'showPersons' is true
