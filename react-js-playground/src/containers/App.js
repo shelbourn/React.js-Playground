@@ -5,7 +5,6 @@ import Cockpit from '../components/Cockpit/Cockpit'
 
 // App is a class-based component because it manages state
 class App extends Component {
-	//! Logic and global variables go in the main class body
 	state = {
 		persons: [
 			{ id: '1', name: 'Matt', age: 39 },
@@ -56,9 +55,6 @@ class App extends Component {
 	}
 
 	render() {
-		//! Anything that is rendered to the screen including logic
-		//! that affects rendered components/state goes in the render()
-		//! method body
 		let buttonText = 'Show Names'
 
 		let persons = null
@@ -77,8 +73,6 @@ class App extends Component {
 			buttonText = 'Hide Names'
 		}
 
-		//! JSX/React components that are rendered to the screen go
-		//! in the return statement within the render() method
 		return (
 			<div className={classes.App}>
 				<Cockpit
