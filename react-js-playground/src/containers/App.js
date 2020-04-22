@@ -3,7 +3,26 @@ import classes from './App.css'
 import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit'
 
-// App is a class-based component because it manages state
+/***********
+ * ! Class-based components:
+ *
+ * class XP extends component
+ * Access to State
+ * Lifecycle Hooks
+ * Access State & Props via "this"
+ *    this.state.XY & this.props.XY
+ * ! Use if you need to manage State or access to Lifecycle hooks
+ * ! and you don't want to use React Hooks
+ *
+ * ! Functional Components:
+ *
+ * const XY = props => {...}
+ * Access to State (useState())
+ * No access to Lifecycle Hooks
+ * Access Props via "props" (as a normal function/variable call)
+ *     props.XY
+ * ! Use in all other cases
+ */
 class App extends Component {
 	state = {
 		persons: [
