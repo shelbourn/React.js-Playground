@@ -1,6 +1,8 @@
 import React from 'react'
 import Person from './Person/Person'
 
+// Presentational components (state-less) are functional components
+// that do not manage state
 const persons = (props) =>
 	props.persons.map((person, index) => {
 		return (
