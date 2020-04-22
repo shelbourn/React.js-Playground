@@ -70,7 +70,7 @@ class App extends Component {
 			persons = (
 				<div>
 					<Persons
-						person={this.state.persons}
+						persons={this.state.persons}
 						clicked={this.deletePersonHandler}
 						changed={this.nameChangedHandler}
 					/>
