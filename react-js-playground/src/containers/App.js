@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classes from './App.css'
-import Person from '../components/Persons/Person/Person'
+import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit'
 
 // App is a class-based component because it manages state
@@ -69,7 +69,11 @@ class App extends Component {
 		if (this.state.showPersons) {
 			persons = (
 				<div>
-					{this.state.}
+					<Persons
+						person={this.state.persons}
+						clicked={this.deletePersonHandler}
+						changed={this.nameChangedHandler}
+					/>
 				</div>
 			)
 			// Dynamically styling output if 'showPersons' is true
