@@ -5,8 +5,12 @@ import classes from './Cockpit.css'
 // {useEffect} is a React hook and NOT a lifecycle hookb
 
 const cockpit = (props) => {
-	const assignedClasses = []
+	// Must pass a function into {useEffect}
+	useEffect(() => {
+		console.log('[Cockpit.js] useEffect')
+	})
 
+	const assignedClasses = []
 	let btnClass = ''
 
 	if (props.showPersons) {
