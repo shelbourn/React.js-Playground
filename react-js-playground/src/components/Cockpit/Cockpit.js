@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import classes from './Cockpit.css'
+// {useEffect} hook is the second most important component in React
+// after {useState} hook
+// {useEffect} is a React hook and NOT a lifecycle hookb
 
 const cockpit = (props) => {
 	const assignedClasses = []
