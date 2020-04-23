@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import classes from './Cockpit.css'
-// {useEffect} hook is the second most important component in React
-// after {useState} hook
-// {useEffect} is a React hook and NOT a lifecycle hookb
-// {useEffect} = componentDidMount & componentDidUpdate combined into one
+
+//! useEffect() is like using componentDidMount & componentDidUpdate in one
+//! componentDidMount = useEffect(() => {...}, [])
+//! componentDidUpdate = useEffect(() => {...}, [props.field1, props.field2, etc])
 
 const cockpit = (props) => {
 	// Must pass a function into {useEffect}
@@ -14,14 +14,6 @@ const cockpit = (props) => {
 			alert('Saved data to the cloud!')
 		}, 1000)
 	}, [props.persons]) // Only triggers on initial page load & when 'persons' updates
-	// arg2 = [] empty bracket to trigger only on initial page load and never again
-	// arg2 with [] is equivalent to componentDidMount ONLY
-	// 2nd argument must be contained in square brackets []
-
-	// Can use {useEffect() as many times as necessary to manage different data}
-	// useEffect(() => {...}, [arg2 = data to be targeted by useEffect])
-	// arg2 with [props.'field'] to be used when you want to target a dependency
-	// Can target multiple fields with arg2 = [props.field1, props.field2, etc]
 
 	const assignedClasses = []
 	let btnClass = ''
