@@ -25,8 +25,20 @@ class App extends Component {
 		return state
 	}
 
+	//! IMPORTANT HOOK
 	componentDidMount() {
 		console.log('[App.js] componentDidMount')
+	}
+
+	//! IMPORTANT HOOK
+	shouldComponentUpdate(nextProps, nextState) {
+		console.log('[App.js] shouldComponentUpdate')
+		return true
+	}
+
+	//! IMPORTANT HOOK
+	componentDidUpdate() {
+		console.log('[App.js componentDidUpdate')
 	}
 
 	// Changes name when user types input
