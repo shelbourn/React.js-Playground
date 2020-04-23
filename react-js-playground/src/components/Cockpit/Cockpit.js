@@ -21,6 +21,7 @@ const cockpit = (props) => {
 	// Can use {useEffect() as many times as necessary to manage different data}
 	// useEffect(() => {...}, [arg2 = data to be targeted by useEffect])
 	// arg2 with [props.'field'] to be used when you want to target a dependency
+	// Can target multiple fields with arg2 = [props.field1, props.field2, etc]
 
 	const assignedClasses = []
 	let btnClass = ''
