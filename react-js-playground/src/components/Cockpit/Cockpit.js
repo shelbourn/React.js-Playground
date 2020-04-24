@@ -13,7 +13,17 @@ const cockpit = (props) => {
 		setTimeout(() => {
 			alert('Saved data to the cloud!')
 		}, 1000)
-	}, [props.persons]) // Only triggers on initial page load & when 'persons' updates
+		return () => {
+			console.log('[Cockpit.js] cleanup work in useEffect')
+		}
+	}, []) // Only triggers on initial page load & when 'persons' updates
+
+	useEffect(() => {
+		console.log('[Cockpit.js] 2nd useEffect')
+		return () => {
+			console.log('[Cockpit.js] cleanup work in 2nd useEffect')
+		}
+	})
 
 	const assignedClasses = []
 	let btnClass = ''

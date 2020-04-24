@@ -22,6 +22,11 @@ class Persons extends Component {
 		console.log(snapshot)
 	}
 
+	// Performs cleanup work
+	componentWillUnmount() {
+		console.log('[Persons.js] componentDidUnmount')
+	}
+
 	render() {
 		console.log('[Persons.js] rendering...')
 		return this.props.persons.map((person, index) => {
@@ -37,4 +42,5 @@ class Persons extends Component {
 		})
 	}
 }
+
 export default Persons
