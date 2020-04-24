@@ -5,15 +5,21 @@ import classes from './Cockpit.css'
 //! componentDidMount = useEffect(() => {...}, [])
 //! componentDidUpdate = useEffect(() => {...}, [props.field1, props.field2, etc])
 
+// Toggling the 'Remove Cockpit' button unmounts the Cockpit
+// The 'timer' constant store a timeOut function that triggers after 1 second
+// If the 'Remove Cockpit' button is clicked before 1 second then
+// the cockpit is unmounted and the alert never shows
+// this is one example of cleanup work with useEffect()
 const cockpit = (props) => {
 	// Must pass a function into {useEffect}
 	useEffect(() => {
 		console.log('[Cockpit.js] useEffect')
 		// http request...
-		setTimeout(() => {
+		const timer = setTimeout(() => {
 			alert('Saved data to the cloud!')
 		}, 1000)
 		return () => {
+			clearTimeout(timer)
 			console.log('[Cockpit.js] cleanup work in useEffect')
 		}
 	}, []) // Only triggers on initial page load & when 'persons' updates
