@@ -5,11 +5,6 @@ import classes from './Cockpit.css'
 //! componentDidMount = useEffect(() => {...}, [])
 //! componentDidUpdate = useEffect(() => {...}, [props.field1, props.field2, etc])
 
-// Toggling the 'Remove Cockpit' button unmounts the Cockpit
-// The 'timer' constant store a timeOut function that triggers after 1 second
-// If the 'Remove Cockpit' button is clicked before 1 second then
-// the cockpit is unmounted and the alert never shows
-// this is one example of cleanup work with useEffect()
 const cockpit = (props) => {
 	// Must pass a function into {useEffect}
 	useEffect(() => {
