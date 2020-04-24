@@ -10,13 +10,13 @@ const cockpit = (props) => {
 	useEffect(() => {
 		console.log('[Cockpit.js] useEffect')
 		// http request...
-		const timer = setTimeout(() => {
-			alert('Saved data to the cloud!')
-		}, 1000)
-		return () => {
-			clearTimeout(timer)
-			console.log('[Cockpit.js] cleanup work in useEffect')
-		}
+		// const timer = setTimeout(() => {
+		// 	alert('Saved data to the cloud!')
+		// }, 1000)
+		// return () => {
+		// 	clearTimeout(timer)
+		// 	console.log('[Cockpit.js] cleanup work in useEffect')
+		// }
 	}, []) // Only triggers on initial page load & when 'persons' updates
 
 	useEffect(() => {
@@ -33,10 +33,10 @@ const cockpit = (props) => {
 		btnClass = classes.Red
 	}
 
-	if (props.persons.length <= 2) {
+	if (props.personsLength <= 2) {
 		assignedClasses.push(classes.red) // classes = ['red']
 	}
-	if (props.persons.length <= 1) {
+	if (props.personsLength <= 1) {
 		assignedClasses.push(classes.bold) // classes = ['red', 'bold']
 	}
 
@@ -50,4 +50,6 @@ const cockpit = (props) => {
 		</div>
 	)
 }
-export default cockpit
+
+// Equivalent to shouldComponentUpdate for Functional Components
+export default React.memo(cockpit)
