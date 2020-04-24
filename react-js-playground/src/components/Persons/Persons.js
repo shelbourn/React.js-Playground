@@ -7,9 +7,14 @@ class Persons extends Component {
 	// 	return state
 	// }
 
+	// Adding the if-else statement to this hook will make it so that
+	// the app re-renders ONLY if persons changes.
 	shouldComponentUpdate(nextProps, nextState) {
 		console.log('[Persons.js] shouldComponentUpdate')
-		return true
+		if (nextProps.persons !== this.props.persons) {
+			return true
+		}
+		return false
 	}
 
 	getSnapshotBeforeUpdate(prevProps, prevState) {
