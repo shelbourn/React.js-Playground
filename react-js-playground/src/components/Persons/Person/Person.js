@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import classes from './Person.css'
 
+//? To return adjacent JSX elements you can eliminate the wrapping <div></div>
+//? and wrap the block in [] and separate the JSX elements
+//? (<p></p>, <button></button>, etc) with commas
+
 class Person extends Component {
 	render() {
 		console.log('[Person.js] rendering...')
