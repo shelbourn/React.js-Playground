@@ -57,6 +57,7 @@ const cockpit = (props) => {
 			>
 				{props.buttonText}
 			</button>
+			<button onClick={props.login}>Log in</button>
 		</div>
 	)
 }
@@ -67,6 +68,7 @@ cockpit.propTypes = {
 	togglePersons: PropTypes.func,
 	personsLength: PropTypes.number,
 	buttonText: PropTypes.string,
+	login: PropTypes.bool,
 }
 
 // Equivalent to shouldComponentUpdate for Functional Components
