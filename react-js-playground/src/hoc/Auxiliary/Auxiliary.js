@@ -1,5 +1,3 @@
-import React from 'react'
-
 //? HOC (higher order components) wrap other components
 //? Aux component is a HOC that only returns the children props within it's scope
 //? The Aux component itself isn't doing anything besides providing a
