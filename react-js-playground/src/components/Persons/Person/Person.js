@@ -5,6 +5,9 @@ import classes from './Person.css'
 //? and wrap the block in [] and separate the JSX elements
 //? (<p></p>, <button></button>, etc) with commas
 
+//? You can also create an HOC (higher order component) and use that component to wrap
+//? JSX code block. This component will not actually return any JSX
+//? itself.
 class Person extends Component {
 	render() {
 		console.log('[Person.js] rendering...')
