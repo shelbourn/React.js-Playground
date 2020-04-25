@@ -9,6 +9,9 @@ import React from 'react'
 //? props.children is baked into React and returns all JSX that is a child
 //? to the main wrapping element
 
+//* You can remove the 'import React...' statement because there is not JSX
+//* being returned here so React.createElement() is not being used
+
 const aux = (props) => props.children
 
 export default aux
