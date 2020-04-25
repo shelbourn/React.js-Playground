@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import classes from './Person.css'
 import Auxiliary from '../../../hoc/Auxiliary'
 import withClass from '../../../hoc/withClass'
+import PropTypes, { number } from 'prop-types'
 
 class Person extends Component {
 	render() {
@@ -22,13 +23,14 @@ class Person extends Component {
 	}
 }
 
-//! This export will wrap the Person component with what is returned by the withClass
-//! function
-//* Therefore NO PROPS from Person will be passed automatically
-//* In order to pass props from the child components you must add a
-//* spread operator to the props taken in in the withClass component
-//% See withClass Component
+//* PropTypes is a component brought in by 'prop-types' that
+//* allows you to designate what types of props (name and data type) are used for either
+//* functional or class-based components
+Person.PropTypes = {
+	click: PropTypes.func,
+	name: PropTypes.string,
+	age: number,
+	changed: PropTypes.func,
+}
 
-//! Technically, exporting a component wrapped by withClasses will
-//! export whatever is returned by the withClass function
 export default withClass(Person, classes.Person)
