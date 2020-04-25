@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import classes from './Cockpit.css'
 import PropTypes from 'prop-types'
 
@@ -7,17 +7,21 @@ import PropTypes from 'prop-types'
 //! componentDidUpdate = useEffect(() => {...}, [props.field1, props.field2, etc])
 
 const cockpit = (props) => {
+	const toggleButtonRef = useRef(null)
+
 	// Must pass a function into {useEffect}
+	//* useEffect() runs after the first React render cycle
 	useEffect(() => {
 		console.log('[Cockpit.js] useEffect')
 		// http request...
 		// const timer = setTimeout(() => {
 		// 	alert('Saved data to the cloud!')
 		// }, 1000)
-		// return () => {
-		// 	clearTimeout(timer)
-		// 	console.log('[Cockpit.js] cleanup work in useEffect')
-		// }
+		//* Automatically clicks the button once the page is rendered
+		toggleButtonRef.current.click()
+		return () => {
+			console.log('[Cockpit.js] cleanupwork in useEffect')
+		}
 	}, []) // Only triggers on initial page load & when 'persons' updates
 
 	useEffect(() => {
@@ -45,16 +49,17 @@ const cockpit = (props) => {
 		<div className={classes.Cockpit}>
 			<h1>{props.title}</h1>
 			<p className={assignedClasses.join(' ')}>This is really working!</p>
-			<button className={btnClass} onClick={props.togglePersons}>
+			<button
+				ref={toggleButtonRef}
+				className={btnClass}
+				onClick={props.togglePersons}
+			>
 				{props.buttonText}
 			</button>
 		</div>
 	)
 }
 
-//! When using PropTypes make sure that camel case is used for
-//! referencing the object and then Pascal case is used for the values
-//! in the key/value pairs
 cockpit.propTypes = {
 	showPersons: PropTypes.bool,
 	title: PropTypes.string,
