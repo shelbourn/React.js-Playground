@@ -10,6 +10,6 @@
 //* You can remove the 'import React...' statement because there is not JSX
 //* being returned here so React.createElement() is not being used
 
-const aux = (props) => props.children
+const auxiliary = (props) => props.children
 
-export default aux
+export default auxiliary

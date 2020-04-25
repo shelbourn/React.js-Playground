@@ -22,4 +22,13 @@ class Person extends Component {
 	}
 }
 
-export default Person
+//! This export will wrap the Person component with what is returned by the withClass
+//! function
+//* Therefore NO PROPS from Person will be passed automatically
+//* In order to pass props from the child components you must add a
+//* spread operator to the props taken in in the withClass component
+//% See withClass Component
+
+//! Technically, exporting a component wrapped by withClasses will
+//! export whatever is returned by the withClass function
+export default withClass(Person, classes.Person)

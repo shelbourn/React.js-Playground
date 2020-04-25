@@ -26,10 +26,20 @@ import React from 'react'
 //! and className is the attribute that we want to apply to the returned JSX
 
 //* This type of HOC should be used when adding some JS logic or something like that
+
+//% WrappedComponent should accept props from the component it is wrapping
+//% otherwise no props will be passed and functionality will be broken
+//% WrappedComponent can accept props from the component it wraps by using the sread
+//% operator
+
+//! adding {...props} to the returned WrappedComponent creates a new props
+//! object with new key/value pairs for the component being wrapped by withClass and
+//! re-links all the props
+
 const withClass = (WrappedComponent, className) => {
 	return (props) => (
 		<div className={className}>
-			<WrappedComponent />
+			<WrappedComponent {...props} />
 		</div>
 	)
 }
