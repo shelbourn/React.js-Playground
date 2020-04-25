@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classes from './Person.css'
-import Aux from '../../../hoc/Auxiliary'
+import Aux from '../../../hoc/Auxiliary/Auxiliary'
 
 //? To return adjacent JSX elements you can eliminate the wrapping <div></div>
 //? and wrap the block in [] and separate the JSX elements
