@@ -1,7 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Person from './Person/Person'
 
-class Persons extends Component {
+//* PureComponent is a component that acts like a normal component
+//* but has a built-in shouldComponentUpdate that checks if any props
+//* have changed or not.
+class Persons extends PureComponent {
 	// static getDerivedStateFromProps(props, state) {
 	// 	console.log('[Persons.js] getDerivedStateFromProps')
 	// 	return state
@@ -9,13 +12,17 @@ class Persons extends Component {
 
 	// Adding the if-else statement to this hook will make it so that
 	// the app re-renders ONLY if persons changes.
-	shouldComponentUpdate(nextProps, nextState) {
-		console.log('[Persons.js] shouldComponentUpdate')
-		if (nextProps.persons !== this.props.persons) {
-			return true
-		}
-		return false
-	}
+	// shouldComponentUpdate(nextProps, nextState) {
+	// 	console.log('[Persons.js] shouldComponentUpdate')
+	// 	if (
+	// 		nextProps.persons !== this.props.persons ||
+	// 		nextProps.changed !== this.props.changed ||
+	// 		nextProps.clicked !== this.props.clicked
+	// 	) {
+	// 		return true
+	// 	}
+	// 	return false
+	// }
 
 	getSnapshotBeforeUpdate(prevProps, prevState) {
 		console.log('[Persons.js] getSnapshotBeforeUpdate')
