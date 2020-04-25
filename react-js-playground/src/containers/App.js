@@ -11,6 +11,17 @@ class App extends Component {
 		console.log('[App.js] constructor')
 	}
 
+	/**
+	 * !!! VERY IMPORTANT: Although setState() is called synchronously, IT IS NOT
+	 * !!! GUARANTEED TO PERFORM A SYNCHRONOUS DOM RENDER!!
+	 * !!! setState() will store the update and React will decide when is a good time
+	 * !!! to re-render the DOM. With small apps, this most-likely will happen
+	 * !!! instantaneously, but with bigger apps IT MAY BE DELAYED!!!
+	 * !!! Therefore, using setState({XYZ: this.state.XYZ}) is NOT how to properly
+	 * !!! update the state because React may not reference the most up-to-date version
+	 * !!! of the state.
+	 */
+
 	state = {
 		persons: [
 			{ id: '1', name: 'Matt', age: 39 },
@@ -21,6 +32,7 @@ class App extends Component {
 		otherState: 'some other value',
 		showPersons: false,
 		showCockpit: true,
+		changeCounter: 0,
 	}
 
 	static getDerivedStateFromProps(props, state) {
@@ -66,7 +78,10 @@ class App extends Component {
 		newPersons[personIndex] = person
 
 		// Updates state with copied/updated newPersons array
-		this.setState({ persons: newPersons })
+		this.setState({
+			persons: newPersons,
+			changeCounter: this.state.changeCounter + 1,
+		})
 	}
 
 	// Deletes person record when the <Person> element is clicked
