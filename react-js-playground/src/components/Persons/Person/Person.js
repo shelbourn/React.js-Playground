@@ -4,16 +4,52 @@ import Auxiliary from '../../../hoc/Auxiliary'
 import withClass from '../../../hoc/withClass'
 import PropTypes, { number } from 'prop-types'
 
+//% The below code is how to focus on the last element touched after a render
+//% cycle is complete:
+
+/* class Person extends Component {
+	componentDidMount() {
+		this.inputElement.focus()
+  }
+  
+  <input
+    key="i3"
+    ref={(inputEl) => {
+      this.inputElement = inputEl
+    }} ></input> */
+
+//? Anytime you call constructor() you must call super() and pass props
+//? to both -- constructor(props) {super(props) ... }
+
+//* With this.inputElementRef = React.createRef()
+//* React uses a built-in method to automatically create a ref when called
 class Person extends Component {
+	constructor(props) {
+		super(props)
+		this.inputElementRef = React.createRef()
+	}
+
+	componentDidMount() {
+		// this.inputElement.focus()
+		//% Must use 'current'
+		//% This focuses the last element in array of Persons
+		//% after React renders the page
+		this.inputElementRef.current.focus()
+	}
 	render() {
 		console.log('[Person.js] rendering...')
 		return (
 			<Auxiliary>
-				<p onClick={this.props.click}>
+				<p key="i1" onClick={this.props.click}>
 					I'm {this.props.name} and I am {this.props.age} years old!
 				</p>
-				<p>{this.props.children}</p>
+				<p key="i2">{this.props.children}</p>
 				<input
+					key="i3"
+					ref={this.inputElementRef}
+					// {(inputEl) => {
+					// 	this.inputElement = inputEl
+					// }}
 					type="text"
 					onChange={this.props.changed}
 					value={this.props.name}
@@ -23,11 +59,6 @@ class Person extends Component {
 	}
 }
 
-//* PropTypes is a component brought in by 'prop-types' that
-//* allows you to designate what types of props (name and data type) are used for either
-//* functional or class-based components
-//* PropTypes is especially important when you are building a component library
-//* to be shared with a team of devs
 Person.propTypes = {
 	click: PropTypes.func,
 	name: PropTypes.string,
