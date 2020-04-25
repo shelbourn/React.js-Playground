@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import classes from './Cockpit.css'
+import PropTypes from 'prop-types'
 
 //! useEffect() is like using componentDidMount & componentDidUpdate in one
 //! componentDidMount = useEffect(() => {...}, [])
@@ -49,6 +50,14 @@ const cockpit = (props) => {
 			</button>
 		</div>
 	)
+}
+
+cockpit.propTypes = {
+	showPersons: PropTypes.bool,
+	title: PropTypes.string,
+	togglePersons: PropTypes.func,
+	personsLength: PropTypes.number,
+	buttonText: PropTypes.string,
 }
 
 // Equivalent to shouldComponentUpdate for Functional Components

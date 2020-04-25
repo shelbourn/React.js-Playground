@@ -26,7 +26,9 @@ class Person extends Component {
 //* PropTypes is a component brought in by 'prop-types' that
 //* allows you to designate what types of props (name and data type) are used for either
 //* functional or class-based components
-Person.PropTypes = {
+//* PropTypes is especially important when you are building a component library
+//* to be shared with a team of devs
+Person.propTypes = {
 	click: PropTypes.func,
 	name: PropTypes.string,
 	age: number,
