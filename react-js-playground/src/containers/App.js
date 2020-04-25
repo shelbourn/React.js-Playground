@@ -78,9 +78,23 @@ class App extends Component {
 		newPersons[personIndex] = person
 
 		// Updates state with copied/updated newPersons array
-		this.setState({
-			persons: newPersons,
-			changeCounter: this.state.changeCounter + 1,
+		//! WRONG WAY TO UPDATE STATE BASED ON PREVIOUS STATE
+		//* this.setState({
+		//* 	persons: newPersons,
+		//* 	changeCounter: this.state.changeCounter + 1,
+		//* })
+
+		//% CORRECT WAY TO UPDATE STATE BASED ON PREVIOUS STATE
+		//% Using built-in function ability in setState() method
+		//% The parameter 'prevState' can be named however you like, but
+		//% the first parameter in the setState() method will reference
+		//% the most-current state that React has rendered.
+
+		this.setState((prevState, props) => {
+			return {
+				persons: newPersons,
+				changeCounter: prevState.changeCounter + 1,
+			}
 		})
 	}
 
