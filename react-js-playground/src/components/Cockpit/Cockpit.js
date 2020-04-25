@@ -18,6 +18,7 @@ const cockpit = (props) => {
 		// 	alert('Saved data to the cloud!')
 		// }, 1000)
 		//* Automatically clicks the button once the page is rendered
+		//* for the first time
 		toggleButtonRef.current.click()
 		return () => {
 			console.log('[Cockpit.js] cleanupwork in useEffect')
