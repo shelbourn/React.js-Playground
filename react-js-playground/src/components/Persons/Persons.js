@@ -4,6 +4,9 @@ import Person from './Person/Person'
 //* PureComponent is a component that acts like a normal component
 //* but has a built-in shouldComponentUpdate that checks if any props
 //* have changed or not.
+
+//? PureComponent automatically performs the same checks that the
+//? below shouldComponentUpdate code does
 class Persons extends PureComponent {
 	// static getDerivedStateFromProps(props, state) {
 	// 	console.log('[Persons.js] getDerivedStateFromProps')
