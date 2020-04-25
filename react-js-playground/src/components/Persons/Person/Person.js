@@ -9,11 +9,15 @@ import Aux from '../../../hoc/Auxiliary/Auxiliary'
 //? You can also create an HOC (higher order component) and use that component to wrap
 //? JSX code block. This component will not actually return any JSX
 //? itself.
+
+//? React 16.2 has a built in HOC wrapper component called 'React.Fragment'
+//? that you can use instead of building your own empty HOC
 class Person extends Component {
 	render() {
 		console.log('[Person.js] rendering...')
 		return (
-			<Aux>
+			// <Aux>
+			<React.Fragment>
 				{/* // <div className={classes.Person}> */}
 				<p onClick={this.props.click}>
 					I'm {this.props.name} and I am {this.props.age} years old!
@@ -25,7 +29,8 @@ class Person extends Component {
 					value={this.props.name}
 				/>
 				{/* // </div> */}
-			</Aux>
+				{/* </Aux> */}
+			</React.Fragment>
 		)
 	}
 }
