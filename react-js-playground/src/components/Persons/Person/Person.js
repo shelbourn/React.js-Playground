@@ -5,7 +5,7 @@ import withClass from '../../../hoc/withClass'
 import PropTypes, { number } from 'prop-types'
 
 //% The below code is how to focus on the last element touched after a render
-//% cycle is complete:
+//% cycle is complete (this is the older approach):
 
 /* class Person extends Component {
 	componentDidMount() {
@@ -23,6 +23,7 @@ import PropTypes, { number } from 'prop-types'
 
 //* With this.inputElementRef = React.createRef()
 //* React uses a built-in method to automatically create a ref when called
+//* This is the more-modern approach to handling this
 class Person extends Component {
 	constructor(props) {
 		super(props)
@@ -34,6 +35,7 @@ class Person extends Component {
 		//% Must use 'current'
 		//% This focuses the last element in array of Persons
 		//% after React renders the page
+		//% 'current' allows access to the current reference
 		this.inputElementRef.current.focus()
 	}
 	render() {
