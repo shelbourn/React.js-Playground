@@ -52,6 +52,9 @@ const cockpit = (props) => {
 	)
 }
 
+//! When using PropTypes make sure that camel case is used for
+//! referencing the object and then Pascal case is used for the values
+//! in the key/value pairs
 cockpit.propTypes = {
 	showPersons: PropTypes.bool,
 	title: PropTypes.string,
