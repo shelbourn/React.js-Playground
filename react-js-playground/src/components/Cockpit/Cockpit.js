@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useContext } from 'react'
 import classes from './Cockpit.css'
 import PropTypes from 'prop-types'
 import AuthContext from '../../context/auth-context'
@@ -9,6 +9,14 @@ import AuthContext from '../../context/auth-context'
 
 const cockpit = (props) => {
 	const toggleButtonRef = useRef(null)
+
+	//% 'authContext' can be named however
+	//% The argument 'AuthContext' refers to the AuthContext component
+	//% we built
+	//* This method is PREFERRED for functional components
+	const authContext = useContext(AuthContext)
+
+	console.log(authContext.authenticated)
 
 	// Must pass a function into {useEffect}
 	//* useEffect() runs after the first React render cycle
@@ -58,9 +66,7 @@ const cockpit = (props) => {
 			>
 				{props.buttonText}
 			</button>
-			<AuthContext.Consumer>
-				{(context) => <button onClick={context.login}>Log in</button>}
-			</AuthContext.Consumer>
+			<button onClick={authContext.login}>Log in</button>
 		</div>
 	)
 }

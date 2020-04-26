@@ -34,6 +34,8 @@ class Person extends Component {
 	//! static contextType is only available in class-based components
 	//! With this you can simply call 'this.context.authenticated' to return
 	//! the authenticated vale of true or false, based on the current state
+	//! Provides access to context outside of only JSX elements with <contextTags></contextTags>
+	//* RECOMMENDED for class-based components
 	static contextType = AuthContext
 
 	componentDidMount() {
