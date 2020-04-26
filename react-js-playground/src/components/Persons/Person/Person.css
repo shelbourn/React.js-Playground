@@ -2,10 +2,17 @@
 	width: 60%;
 	margin: 16px auto;
 	border: 2px solid black;
-	box-shadow: 0 2px 3px cornflowerblue;
+	box-shadow: 0 2px 3px steelblue;
 	border-radius: 15px;
 	padding: 16px;
 	text-align: center;
 	font-family: sans-serif;
 	font-variant: small-caps;
+}
+
+/* Media queries work like normal with CSS modules */
+@media (min-width: 500px) {
+	.Person {
+		width: 450px;
+	}
 }

@@ -1,0 +1,8 @@
+.App {
+	text-align: center;
+}
+
+/* Use the global selector to specify classes to be part of global scope 
+Example:
+:global .App {...} 
+*/
