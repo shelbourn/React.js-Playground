@@ -3,6 +3,7 @@ import classes from './Person.css'
 import Auxiliary from '../../../hoc/Auxiliary'
 import withClass from '../../../hoc/withClass'
 import PropTypes, { number } from 'prop-types'
+import AuthContext from '../../../context/auth-context'
 
 //% The below code is how to focus on the last element touched after a render
 //% cycle is complete (this is the older approach):
@@ -42,11 +43,15 @@ class Person extends Component {
 		console.log('[Person.js] rendering...')
 		return (
 			<Auxiliary>
-				{this.props.isAuth ? (
-					<p>You're Authenticated!</p>
-				) : (
-					<p>Please Log in!</p>
-				)}
+				<AuthContext.Consumer>
+					{(context) =>
+						context.authenticated ? (
+							<p>You're Authenticated!</p>
+						) : (
+							<p>Please Log in!</p>
+						)
+					}
+				</AuthContext.Consumer>
 				<p key="i1" onClick={this.props.click}>
 					I'm {this.props.name} and I am {this.props.age} years old!
 				</p>

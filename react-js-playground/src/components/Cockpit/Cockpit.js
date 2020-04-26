@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import classes from './Cockpit.css'
 import PropTypes from 'prop-types'
+import AuthContext from '../../context/auth-context'
 
 //! useEffect() is like using componentDidMount & componentDidUpdate in one
 //! componentDidMount = useEffect(() => {...}, [])
@@ -57,7 +58,9 @@ const cockpit = (props) => {
 			>
 				{props.buttonText}
 			</button>
-			<button onClick={props.login}>Log in</button>
+			<AuthContext.Consumer>
+				{(context) => <button onClick={context.login}>Log in</button>}
+			</AuthContext.Consumer>
 		</div>
 	)
 }
