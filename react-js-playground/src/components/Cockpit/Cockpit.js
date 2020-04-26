@@ -7,6 +7,9 @@ import AuthContext from '../../context/auth-context'
 //! componentDidMount = useEffect(() => {...}, [])
 //! componentDidUpdate = useEffect(() => {...}, [props.field1, props.field2, etc])
 
+//* useContext() Hook is PREFERRED for managing context in functional components
+//* static contextType is PREFERRED for managing context in class-based components
+
 const cockpit = (props) => {
 	const toggleButtonRef = useRef(null)
 
