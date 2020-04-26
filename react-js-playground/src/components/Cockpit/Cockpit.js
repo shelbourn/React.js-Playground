@@ -71,7 +71,7 @@ cockpit.propTypes = {
 	togglePersons: PropTypes.func,
 	personsLength: PropTypes.number,
 	buttonText: PropTypes.string,
-	login: PropTypes.bool,
+	login: PropTypes.func,
 }
 
 // Equivalent to shouldComponentUpdate for Functional Components

@@ -31,6 +31,11 @@ class Person extends Component {
 		this.inputElementRef = React.createRef()
 	}
 
+	//! static contextType is only available in class-based components
+	//! With this you can simply call 'this.context.authenticated' to return
+	//! the authenticated vale of true or false, based on the current state
+	static contextType = AuthContext
+
 	componentDidMount() {
 		// this.inputElement.focus()
 		//% Must use 'current'
@@ -38,20 +43,17 @@ class Person extends Component {
 		//% after React renders the page
 		//% 'current' allows access to the current reference
 		this.inputElementRef.current.focus()
+		console.log(this.context.authenticated)
 	}
 	render() {
 		console.log('[Person.js] rendering...')
 		return (
 			<Auxiliary>
-				<AuthContext.Consumer>
-					{(context) =>
-						context.authenticated ? (
-							<p>You're Authenticated!</p>
-						) : (
-							<p>Please Log in!</p>
-						)
-					}
-				</AuthContext.Consumer>
+				{this.context.authenticated ? (
+					<p>You're Authenticated!</p>
+				) : (
+					<p>Please Log in!</p>
+				)}
 				<p key="i1" onClick={this.props.click}>
 					I'm {this.props.name} and I am {this.props.age} years old!
 				</p>
