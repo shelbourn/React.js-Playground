@@ -19,7 +19,7 @@ axios.interceptors.request.use(
 	},
 
 	//! Must return Promise.reject(error) because axios has a built-in Promise
-	//! and we set the paramater of our .catch() method to be 'error'
+	//! and we set the paramater of our component-local .catch() method to be 'error'
 	(error) => {
 		console.log(error)
 		return Promise.reject(error)
