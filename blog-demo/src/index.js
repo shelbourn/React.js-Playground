@@ -8,6 +8,14 @@ import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 import axios from 'axios'
 
+//* Sets global base URL configuration
+//* All POST/GET/PUT/DELETE/PATCH URLs will be appended to this
+axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
+
+//* More global default settings with Axios
+axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN'
+axios.defaults.headers.post['Authorization'] = 'application/json'
+
 //* Intercepts all http requests made throughout the app
 const requestInterceptor = axios.interceptors.request.use(
 	(request) => {
@@ -28,7 +36,7 @@ const requestInterceptor = axios.interceptors.request.use(
 
 //* Assigning interceptor to a variable allows you to remove it later
 //* as shown above and below
-axios.interceptors.request.eject(requestInterceptor)
+// axios.interceptors.request.eject(requestInterceptor)
 
 //* Intercepts all http responses received throughout the app
 axios.interceptors.response.use(
