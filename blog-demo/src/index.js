@@ -9,7 +9,7 @@ import registerServiceWorker from './registerServiceWorker'
 import axios from 'axios'
 
 //* Intercepts all http requests made throughout the app
-axios.interceptors.request.use(
+const requestInterceptor = axios.interceptors.request.use(
 	(request) => {
 		console.log(request)
 		//% Can (and should) edit request (config request) before
@@ -25,6 +25,10 @@ axios.interceptors.request.use(
 		return Promise.reject(error)
 	}
 )
+
+//* Assigning interceptor to a variable allows you to remove it later
+//* as shown above and below
+axios.interceptors.request.eject(requestInterceptor)
 
 //* Intercepts all http responses received throughout the app
 axios.interceptors.response.use(
