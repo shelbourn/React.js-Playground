@@ -11,6 +11,8 @@ import './Blog.css'
 //* in a React re-render before the request has completed.
 //? axios has PROMISE objects built-in. Therefore, you can chain .then onto it
 
+//! Handling errors locally within components is a best practice and makes sense
+
 class Blog extends Component {
 	state = {
 		posts: [],
@@ -20,7 +22,7 @@ class Blog extends Component {
 
 	componentDidMount() {
 		axios
-			.get('https://jsonplaceholder.typicode.com/posts')
+			.get('https://jsonplaceholder.typicode.com/postssss')
 			.then((response) => {
 				const posts = response.data.slice(0, 4)
 				const updatedPosts = posts.map((post) => {
