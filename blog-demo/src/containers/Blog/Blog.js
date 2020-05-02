@@ -5,25 +5,32 @@ import FullPost from '../../components/FullPost/FullPost'
 import NewPost from '../../components/NewPost/NewPost'
 import './Blog.css'
 
+//% Axios is a package for easily managing http/ajax requests
+//* componentDidMount() is a great place for attaching an http request
+//* because it can be executed as a side-effect without resulting
+//* in a React re-render before the request has completed.
+//? axios has PROMISE objects built-in. Therefore, you can chain .then onto it
+
 class Blog extends Component {
-	//% Axios is a package for easily managing http/ajax requests
-	//* componentDidMount() is a great place for attaching an http request
-	//* because it can be executed as a side-effect without resulting
-	//* in a React re-render before the request has completed.
-	//? axios has PROMISE objects built-in. Therefore, you can chain .then onto it
+	state = {
+		posts: [],
+	}
 
 	componentDidMount() {
-		axios.get('https://jsonplaceholder.typicode.com/posts')
+		axios.get('https://jsonplaceholder.typicode.com/posts').then((response) => {
+			this.setState({ posts: response.data })
+			// console.log(response)
+		})
 	}
 
 	render() {
+		const posts = this.state.posts.map((post) => {
+			return <Post key={post.id} title={post.title} />
+		})
+
 		return (
 			<div>
-				<section className="Posts">
-					<Post />
-					<Post />
-					<Post />
-				</section>
+				<section className="Posts">{posts}</section>
 				<section>
 					<FullPost />
 				</section>
