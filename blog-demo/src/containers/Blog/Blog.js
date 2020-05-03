@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import Post from '../../components/Post/Post'
 import FullPost from '../../components/FullPost/FullPost'
 import NewPost from '../../components/NewPost/NewPost'
 import './Blog.css'
+import axios from '../../axios'
 
 //% Axios is a package for easily managing http/ajax requests
 //* componentDidMount() is a great place for attaching an http request
