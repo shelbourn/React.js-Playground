@@ -4,6 +4,7 @@ import './Blog.css'
 import Posts from './Posts/Posts'
 import { Route, NavLink } from 'react-router-dom'
 import NewPost from './NewPost/NewPost'
+import FullPost from './FullPost/FullPost'
 
 //% Axios is a package for easily managing http/ajax requests
 //* componentDidMount() is a great place for attaching an http request
@@ -78,7 +79,7 @@ class Blog extends Component {
 				{/* To pass dynamic routes use path="/:anything-you-want" */}
 				<Route path="/" exact component={Posts} />
 				<Route path="/new-post" component={NewPost} />
-				<Route path="/:id" exact component={Posts} />
+				<Route path="/:id" exact component={FullPost} />
 			</div>
 		)
 	}
