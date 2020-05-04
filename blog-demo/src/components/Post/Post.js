@@ -1,6 +1,10 @@
 import React from 'react'
-
+import { withRouter } from 'react-router-dom'
 import './Post.css'
+
+//* withRouter is a HOC imported via React Router used
+//* to wrap components and then pass on the React Router props to
+//* that component (eg the 'match', 'location', etc props)
 
 const post = (props) => (
 	<article className="Post" onClick={props.clicked}>
@@ -11,4 +15,4 @@ const post = (props) => (
 	</article>
 )
 
-export default post
+export default withRouter(post)
