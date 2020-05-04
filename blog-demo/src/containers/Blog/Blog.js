@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import axios from 'axios'
 import './Blog.css'
 import Posts from './Posts/Posts'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import NewPost from './NewPost/NewPost'
 
 //% Axios is a package for easily managing http/ajax requests
@@ -24,10 +24,24 @@ class Blog extends Component {
 					<nav>
 						<ul>
 							<li>
-								<a href="/">Home</a>
+								{/* 'Link... to="" is essentially the same as <a href=""...></a>
+                but it prevents the app from fully reloading everytime a link is clicked.
+                Instead, the Link component imported through React Router uses
+                routing to only re-render the parts of the DOM that need to be
+                without reloading the entire app*/}
+								<Link to="/">Home</Link>
 							</li>
 							<li>
-								<a href="/new-post">New Post</a>
+								{/* Below shows examples of advanced routing */}
+								<Link
+									to={{
+										pathname: '/new-post',
+										hash: '#submit',
+										search: '?quick-submit=true',
+									}}
+								>
+									New Post
+								</Link>
 							</li>
 						</ul>
 					</nav>
