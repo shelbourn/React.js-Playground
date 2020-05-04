@@ -4,7 +4,7 @@ import './Post.css'
 
 //* withRouter is a HOC imported via React Router used
 //* to wrap components and then pass on the React Router props to
-//* that component (eg the 'match', 'location', etc props)
+//* that wrapped component (eg the 'match', 'location', etc props)
 
 const post = (props) => {
 	console.log(props)

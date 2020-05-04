@@ -16,6 +16,13 @@ import NewPost from './NewPost/NewPost'
 //* To enable Routing for an individual container that you want to route to
 //* you use the imported {Route} component
 
+//% The 'path' property in the Link component ALWAYS uses absolute paths and not
+//% relative ones. Meaning that the designated 'path' is always appended immediately
+//% following the base URL
+
+//? In order to build a relative path you can use...
+//? this.props.match.url + '/new-post'
+
 class Blog extends Component {
 	render() {
 		return (
@@ -35,6 +42,8 @@ class Blog extends Component {
 								{/* Below shows examples of advanced routing */}
 								<Link
 									to={{
+										// * This pathname would dynamically build a relative path
+										// pathname: this.props.match.url + '/new-post',
 										pathname: '/new-post',
 										hash: '#submit',
 										search: '?quick-submit=true',
