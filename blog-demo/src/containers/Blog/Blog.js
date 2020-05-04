@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import axios from 'axios'
 import './Blog.css'
 import Posts from './Posts/Posts'
-import { Route, Link } from 'react-router-dom'
+import { Route, NavLink } from 'react-router-dom'
 import NewPost from './NewPost/NewPost'
 
 //% Axios is a package for easily managing http/ajax requests
@@ -23,6 +23,8 @@ import NewPost from './NewPost/NewPost'
 //? In order to build a relative path you can use...
 //? this.props.match.url + '/new-post'
 
+//! To be able to assign classes to links use the NavLink component imported via React Router
+
 class Blog extends Component {
 	render() {
 		return (
@@ -36,11 +38,28 @@ class Blog extends Component {
                 Instead, the Link component imported through React Router uses
                 routing to only re-render the parts of the DOM that need to be
                 without reloading the entire app*/}
-								<Link to="/">Home</Link>
+
+								{/* Use exact with the Link/NavLink also if it is used in the Route
+                This is essential for adding CSS styles to active links.
+                Otherwise, all links that start with '/' (which is all links) will have the active
+                CSS class applied. */}
+
+								{/* Override the default class (active) assigned by NavLink for active links
+                using activeClassName*/}
+
+								{/* Assign inline CSS style to NavLink using activeStyle = {{...}} */}
+								<NavLink
+									to="/"
+									exact
+									activeClassName="my-active"
+									activeStyle={{ color: 'steelBlue' }}
+								>
+									Home
+								</NavLink>
 							</li>
 							<li>
 								{/* Below shows examples of advanced routing */}
-								<Link
+								<NavLink
 									to={{
 										// * This pathname would dynamically build a relative path
 										// pathname: this.props.match.url + '/new-post',
@@ -50,14 +69,16 @@ class Blog extends Component {
 									}}
 								>
 									New Post
-								</Link>
+								</NavLink>
 							</li>
 						</ul>
 					</nav>
 				</header>
 				{/* Use 'component' instead of 'render' to render components */}
+				{/* To pass dynamic routes use path="/:anything-you-want" */}
 				<Route path="/" exact component={Posts} />
 				<Route path="/new-post" component={NewPost} />
+				<Route path="/:id" exact component={Posts} />
 			</div>
 		)
 	}
