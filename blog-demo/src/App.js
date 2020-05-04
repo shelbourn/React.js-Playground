@@ -4,6 +4,7 @@ import Blog from './containers/Blog/Blog'
 
 //! For React Router, you must wrap the component you want to
 //! enable routes in, in either App.js (root js file) or index.js
+//! Wrap this component with the imported {BrowserRouter} component
 
 //* With React Router enabled, it makes sense to move routed components
 //* into the Containers folder because they are more like containers now
