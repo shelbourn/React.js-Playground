@@ -6,13 +6,17 @@ import './Post.css'
 //* to wrap components and then pass on the React Router props to
 //* that component (eg the 'match', 'location', etc props)
 
-const post = (props) => (
-	<article className="Post" onClick={props.clicked}>
-		<h1>{props.title}</h1>
-		<div className="Info">
-			<div className="Author">{props.author}</div>
-		</div>
-	</article>
-)
+const post = (props) => {
+	console.log(props)
+
+	return (
+		<article className="Post" onClick={props.clicked}>
+			<h1>{props.title}</h1>
+			<div className="Info">
+				<div className="Author">{props.author}</div>
+			</div>
+		</article>
+	)
+}
 
 export default withRouter(post)
