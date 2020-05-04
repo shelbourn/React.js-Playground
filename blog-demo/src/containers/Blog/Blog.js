@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import axios from 'axios'
 import './Blog.css'
-import axios from '../../axios'
+import Posts from './Posts/Posts'
 
 //% Axios is a package for easily managing http/ajax requests
 //* componentDidMount() is a great place for attaching an http request
@@ -27,6 +27,7 @@ class Blog extends Component {
 						</ul>
 					</nav>
 				</header>
+        <Posts/>
 			</div>
 		)
 	}

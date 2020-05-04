@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import axios from '../../../axios'
+import Post from '../../../components/Post/Post'
+import './Posts.css'
 
 class Posts extends Component {
 	state = {
@@ -20,10 +23,10 @@ class Posts extends Component {
 				// console.log(response)
 			})
 			.catch((error) => {
-				this.setState({
-					error: true,
-				})
-				// console.log(error)
+				console.log(error)
+				// this.setState({
+				// 	error: true,
+				// })
 			})
 	}
 
@@ -51,3 +54,5 @@ class Posts extends Component {
 		return <section className="Posts">{posts}</section>
 	}
 }
+
+export default Posts
