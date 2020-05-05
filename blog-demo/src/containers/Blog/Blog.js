@@ -81,8 +81,8 @@ class Blog extends Component {
 				{/* The Switch component imported via React Router will
         return the first occurrence of a given route path and stop. No
         other paths will be returned (multiple route will not be shown at once) */}
+				<Route path="/" exact component={Posts} />
 				<Switch>
-					<Route path="/" exact component={Posts} />
 					<Route path="/new-post" component={NewPost} />
 					<Route path="/:id" exact component={FullPost} />
 				</Switch>
