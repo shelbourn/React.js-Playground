@@ -55,7 +55,7 @@ class Blog extends Component {
 									activeClassName="my-active"
 									activeStyle={{ color: 'steelBlue' }}
 								>
-									Home
+									Posts
 								</NavLink>
 							</li>
 							<li>
