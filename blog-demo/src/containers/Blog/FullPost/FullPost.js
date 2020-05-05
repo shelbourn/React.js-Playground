@@ -13,17 +13,18 @@ class FullPost extends Component {
 
 	//? componentDidUpdate only returns true if new props are received
 
-	componentDidUpdate() {
+	componentDidMount() {
 		//* This crazy if block checks first to see if props.id is truthy
 		//* then checks if loadedPost is falsy OR loadedPost is truthy AND
 		//* loadedPost.id is NOT EQUAL to props.id
 		//* Basically this prevents an infinite loop
-		if (this.props.id) {
+		console.log(this.props)
+		if (this.props.match.params.id) {
 			if (
 				!this.state.loadedPost ||
 				(this.state.loadedPost && this.state.loadedPost.id !== this.props.id)
 			) {
-				axios.get('/posts/' + this.props.id).then((response) => {
+				axios.get('/posts/' + this.props.match.params.id).then((response) => {
 					this.setState({ loadedPost: response.data })
 					// console.log(response)
 				})
