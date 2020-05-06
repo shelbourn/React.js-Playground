@@ -3,7 +3,13 @@ import React, { Component } from 'react'
 import './Blog.css'
 import Posts from './Posts/Posts'
 import { Route, NavLink, Switch, Redirect } from 'react-router-dom'
-import NewPost from './NewPost/NewPost'
+// import NewPost from './NewPost/NewPost'
+import asyncComponent from '../../hoc/asyncComponent'
+
+//* Dynamically import file for async render
+const AsyncNewPost = asyncComponent(() => {
+	return import('./NewPost/NewPost')
+})
 
 //% Axios is a package for easily managing http/ajax requests
 //* componentDidMount() is a great place for attaching an http request
@@ -89,7 +95,7 @@ class Blog extends Component {
           navigating to NewPost  */}
 					{/* You can also use 'guards' to handle 404 (unknown route) errors */}
 					{this.state.auth ? (
-						<Route path="/new-post" component={NewPost} />
+						<Route path="/new-post" component={AsyncNewPost} />
 					) : null}
 					<Route path="/posts" component={Posts} />
 					{/* Handling 404 (unknown route) errors - SHOULD ALWAYS BE LISTED LAST IN ROUTE LIST */}
