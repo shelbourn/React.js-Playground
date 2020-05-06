@@ -26,6 +26,10 @@ import NewPost from './NewPost/NewPost'
 //! To be able to assign classes to links use the NavLink component imported via React Router
 
 class Blog extends Component {
+	state = {
+		auth: false,
+	}
+
 	render() {
 		return (
 			<div className="Blog">
@@ -81,7 +85,11 @@ class Blog extends Component {
         return the first occurrence of a given route path and stop. No
         other paths will be returned (multiple route will not be shown at once) */}
 				<Switch>
-					<Route path="/new-post" component={NewPost} />
+					{/* Below is a 'guard' which will prevent any unauthorized users from
+          navigating to NewPost  */}
+					{this.state.auth ? (
+						<Route path="/new-post" component={NewPost} />
+					) : null}
 					<Route path="/posts" component={Posts} />
 					{/* <Redirect from=... only works within a <Switch>
           otherwise only <Redirect to=... is used */}
