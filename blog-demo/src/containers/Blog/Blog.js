@@ -4,7 +4,6 @@ import './Blog.css'
 import Posts from './Posts/Posts'
 import { Route, NavLink, Switch } from 'react-router-dom'
 import NewPost from './NewPost/NewPost'
-import FullPost from './FullPost/FullPost'
 
 //% Axios is a package for easily managing http/ajax requests
 //* componentDidMount() is a great place for attaching an http request
@@ -50,7 +49,7 @@ class Blog extends Component {
 
 								{/* Assign inline CSS style to NavLink using activeStyle = {{...}} */}
 								<NavLink
-									to="/"
+									to="/posts"
 									exact
 									activeClassName="my-active"
 									activeStyle={{ color: 'steelBlue' }}
@@ -81,10 +80,9 @@ class Blog extends Component {
 				{/* The Switch component imported via React Router will
         return the first occurrence of a given route path and stop. No
         other paths will be returned (multiple route will not be shown at once) */}
-				<Route path="/" exact component={Posts} />
 				<Switch>
 					<Route path="/new-post" component={NewPost} />
-					<Route path="/:id" exact component={FullPost} />
+					<Route path="/posts" component={Posts} />
 				</Switch>
 			</div>
 		)

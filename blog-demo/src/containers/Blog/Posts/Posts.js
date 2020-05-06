@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from '../../../axios'
+import { Route } from 'react-router-dom'
+import FullPost from '../FullPost/FullPost'
 import Post from '../../../components/Post/Post'
 import './Posts.css'
 
@@ -17,7 +19,7 @@ class Posts extends Component {
 				const updatedPosts = posts.map((post) => {
 					return {
 						...post,
-						author: 'Max',
+						author: 'Matt Shelbourn',
 					}
 				})
 				this.setState({ posts: updatedPosts })
@@ -35,7 +37,7 @@ class Posts extends Component {
 	//* but it does it programmatically
 	//* This uses the route's .push() method which is part of the history prop
 	postSelectedHandler = (id) => {
-		this.props.history.push({ pathname: '/' + id })
+		this.props.history.push({ pathname: '/posts' + id })
 		//? Below also works
 		// this.props.history.push('/' + id)
 	}
@@ -55,9 +57,22 @@ class Posts extends Component {
 					// </Link>
 				)
 			})
+			return (
+				<div>
+					<section className="Posts">{posts}</section>
+					{/* Creates a nested route which will diplay Posts above
+          and FullPost below on page */}
+					<Route
+						//? this.props.match.url stores current routed to URL
+						//? Use this method for creating dynamically assigned
+						//? nested routes (USE THIS METHOD FOR NESTED ROUTES).
+						path={this.props.match.url + '/:id'}
+						exact
+						component={FullPost}
+					/>
+				</div>
+			)
 		}
-
-		return <section className="Posts">{posts}</section>
 	}
 }
 
