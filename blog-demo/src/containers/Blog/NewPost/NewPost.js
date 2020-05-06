@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
 import axios from '../../../axios'
+import { Redirect } from 'react-router-dom'
 import './NewPost.css'
 
 class NewPost extends Component {
@@ -8,6 +8,7 @@ class NewPost extends Component {
 		title: '',
 		content: '',
 		author: 'Max',
+		submitted: false,
 	}
 
 	componentDidMount() {
@@ -22,12 +23,20 @@ class NewPost extends Component {
 		}
 		axios.post('/posts', post).then((response) => {
 			console.log(response)
+			this.setState({ submitted: true })
 		})
 	}
 
+	//? Using a conditional <Redirect> outside of a <Switch> statement
+
 	render() {
+		let redirect = null
+		if (this.state.submitted) {
+			redirect = <Redirect to="/posts" />
+		}
 		return (
 			<div className="NewPost">
+				{redirect}
 				<h1>Add a Post</h1>
 				<label>Title</label>
 				<input
