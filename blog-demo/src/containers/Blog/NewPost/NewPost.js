@@ -12,6 +12,8 @@ class NewPost extends Component {
 	}
 
 	componentDidMount() {
+		//* Another way of implementing a 'guard'
+		//% If user !auth => this.props.history.replace('/posts')
 		console.log(this.props)
 	}
 
