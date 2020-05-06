@@ -7,6 +7,7 @@ import { Route, NavLink, Switch, Redirect } from 'react-router-dom'
 import asyncComponent from '../../hoc/asyncComponent'
 
 //* Dynamically import file for async render
+//% Can be assigned to any page you want to lazy-load/code-split
 const AsyncNewPost = asyncComponent(() => {
 	return import('./NewPost/NewPost')
 })
