@@ -37,7 +37,7 @@ class Posts extends Component {
 	//* but it does it programmatically
 	//* This uses the route's .push() method which is part of the history prop
 	postSelectedHandler = (id) => {
-		this.props.history.push({ pathname: '/posts' + id })
+		this.props.history.push({ pathname: '/posts/' + id })
 		//? Below also works
 		// this.props.history.push('/' + id)
 	}
