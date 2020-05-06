@@ -23,7 +23,13 @@ class NewPost extends Component {
 		}
 		axios.post('/posts', post).then((response) => {
 			console.log(response)
-			this.setState({ submitted: true })
+			//* This allows us to push a new page without a redirect or changing state
+			//* .push() pushes a new page to the web stack so the back button will work
+			//* whereas <Redirect> replaces the page on the stack and the back button will not return to the
+			//* true previous page
+			//* .replace() has the same functionality a <Redirect>
+			this.props.history.push('/posts')
+			// this.setState({ submitted: true })
 		})
 	}
 
