@@ -16,6 +16,9 @@ class App extends Component {
 			//* Any sub-component which is added between the BrowserRouter
 			//* tags will now have routing enabled.
 
+			//? You can change the root path using syntax below
+
+			// <BrowserRouter basename='/my-app'>
 			<BrowserRouter>
 				<div className="App">
 					<Blog />

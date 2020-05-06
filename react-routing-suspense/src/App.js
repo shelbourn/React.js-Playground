@@ -11,6 +11,10 @@ import Welcome from './containers/Welcome'
 
 //? Suspense is NOT avaialable for Server Side Rendered (SSR) apps
 
+//% Set base URL path (default landing page) with <BrowserRouter basename='/my-app'></BrowserRouter>
+//% The default setting for basename is '/' and you rarely have to change it, but this is how you do it
+//% if you want to
+
 //* Named exports are not supported in React.lazy()
 const Posts = React.lazy(() => import('./containers/Posts'))
 
