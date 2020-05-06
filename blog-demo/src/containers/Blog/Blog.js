@@ -92,9 +92,14 @@ class Blog extends Component {
 						<Route path="/new-post" component={NewPost} />
 					) : null}
 					<Route path="/posts" component={Posts} />
+					{/* With 404 (unknown route) errors you can either render inline JSX or a built component */}
+					<Route
+						// component={}
+						render={() => <h1>Whoopsie! Page not found!</h1>}
+					/>
 					{/* <Redirect from=... only works within a <Switch>
           otherwise only <Redirect to=... is used */}
-					<Redirect from="/" to="/posts" />
+					{/* <Redirect from="/" to="/posts" /> */}
 					{/* <Route path="/" component={Posts} /> */}
 				</Switch>
 			</div>
