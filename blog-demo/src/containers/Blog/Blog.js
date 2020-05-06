@@ -87,6 +87,7 @@ class Blog extends Component {
 				<Switch>
 					{/* Below is a 'guard' which will prevent any unauthorized users from
           navigating to NewPost  */}
+					{/* You can also use 'guards' to handle 404 (unknown route) errors */}
 					{this.state.auth ? (
 						<Route path="/new-post" component={NewPost} />
 					) : null}
