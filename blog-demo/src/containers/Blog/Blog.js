@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import axios from 'axios'
 import './Blog.css'
 import Posts from './Posts/Posts'
-import { Route, NavLink, Switch } from 'react-router-dom'
+import { Route, NavLink, Switch, Redirect } from 'react-router-dom'
 import NewPost from './NewPost/NewPost'
 
 //% Axios is a package for easily managing http/ajax requests
@@ -83,6 +83,10 @@ class Blog extends Component {
 				<Switch>
 					<Route path="/new-post" component={NewPost} />
 					<Route path="/posts" component={Posts} />
+					{/* <Redirect from=... only works within a <Switch>
+          otherwise only <Redirect to=... is used */}
+					<Redirect from="/" to="/posts" />
+					{/* <Route path="/" component={Posts} /> */}
 				</Switch>
 			</div>
 		)
