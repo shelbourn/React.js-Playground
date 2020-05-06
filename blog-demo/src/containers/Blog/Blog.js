@@ -92,10 +92,16 @@ class Blog extends Component {
 						<Route path="/new-post" component={NewPost} />
 					) : null}
 					<Route path="/posts" component={Posts} />
+					{/* Handling 404 (unknown route) errors - SHOULD ALWAYS BE LISTED LAST IN ROUTE LIST */}
 					{/* With 404 (unknown route) errors you can either render inline JSX or a built component */}
+					{/* Catch-all Route cannot be used with <Route path='/'> */}
 					<Route
 						// component={}
-						render={() => <h1>Whoopsie! Page not found!</h1>}
+						render={() => (
+							<h1 style={{ textAlign: 'center', color: 'steelblue' }}>
+								Whoopsie! Page not found!
+							</h1>
+						)}
 					/>
 					{/* <Redirect from=... only works within a <Switch>
           otherwise only <Redirect to=... is used */}
