@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, NavLink } from 'react-router-dom'
+import { Route, Switch, NavLink, Redirect } from 'react-router-dom'
 
 import Courses from './containers/Courses/Courses'
 import Users from './containers/Users/Users'
@@ -41,13 +41,14 @@ class App extends Component {
 					{/* <li>
 						Load the "Course" component as a nested component of "Courses"
 					</li> */}
-					<li>Add a 404 error page and render it for any unknown routes</li>
+					{/* <li>Add a 404 error page and render it for any unknown routes</li> */}
 					<li>
 						Redirect requests to /all-courses to /courses (=> Your "Courses"
 						page)
 					</li>
 				</ol>
 				<Switch>
+					<Redirect from="/all-courses" to="/courses" />
 					<Route path="/users" component={Users} />
 					<Route path="/courses" component={Courses} />
 					<Route
