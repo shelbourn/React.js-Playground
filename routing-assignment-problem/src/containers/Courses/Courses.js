@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 
 import './Courses.css'
-import '../Course/Course'
-
+import Course from '../Course/Course'
 class Courses extends Component {
 	state = {
 		courses: [
@@ -40,6 +40,11 @@ class Courses extends Component {
 						)
 					})}
 				</section>
+				<Route
+					exact
+					path={this.props.match.url + '/:courseID'}
+					component={Course}
+				/>
 			</div>
 		)
 	}

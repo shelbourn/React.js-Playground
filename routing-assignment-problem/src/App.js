@@ -3,7 +3,6 @@ import { Route, Switch, NavLink } from 'react-router-dom'
 
 import Courses from './containers/Courses/Courses'
 import Users from './containers/Users/Users'
-import Course from './containers/Course/Course'
 
 class App extends Component {
 	render() {
@@ -34,11 +33,11 @@ class App extends Component {
 						any data for now)
 					</li>
 					<li>Pass the course ID to the "Course" page and output it there</li> */}
-					<li>
+					{/* <li>
 						Pass the course title to the "Course" page - pass it as a param or
 						score bonus points by passing it as query params (you need to
 						manually parse them though!)
-					</li>
+					</li> */}
 					<li>
 						Load the "Course" component as a nested component of "Courses"
 					</li>
@@ -50,7 +49,6 @@ class App extends Component {
 				</ol>
 				<Switch>
 					<Route path="/users" component={Users} />
-					<Route path="/courses/:courseID" component={Course} />
 					<Route path="/courses" component={Courses} />
 				</Switch>
 			</div>
