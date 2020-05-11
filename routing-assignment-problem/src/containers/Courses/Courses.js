@@ -15,7 +15,8 @@ class Courses extends Component {
 	// Wrapping each course tile with a link element
 	courseSelectedHandler = (id, title) => {
 		this.props.history.push({
-			pathname: this.props.match.url + '/' + id + '/?title=' + title,
+			pathname: this.props.match.url + '/' + id,
+			search: '?title=' + title,
 		})
 	}
 
