@@ -42,10 +42,10 @@ class App extends Component {
 						Load the "Course" component as a nested component of "Courses"
 					</li> */}
 					{/* <li>Add a 404 error page and render it for any unknown routes</li> */}
-					<li>
+					{/* <li>
 						Redirect requests to /all-courses to /courses (=> Your "Courses"
 						page)
-					</li>
+					</li> */}
 				</ol>
 				<Switch>
 					<Redirect from="/all-courses" to="/courses" />
