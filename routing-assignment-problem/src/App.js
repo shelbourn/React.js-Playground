@@ -38,9 +38,9 @@ class App extends Component {
 						score bonus points by passing it as query params (you need to
 						manually parse them though!)
 					</li> */}
-					<li>
+					{/* <li>
 						Load the "Course" component as a nested component of "Courses"
-					</li>
+					</li> */}
 					<li>Add a 404 error page and render it for any unknown routes</li>
 					<li>
 						Redirect requests to /all-courses to /courses (=> Your "Courses"
@@ -50,6 +50,19 @@ class App extends Component {
 				<Switch>
 					<Route path="/users" component={Users} />
 					<Route path="/courses" component={Courses} />
+					<Route
+						render={() => (
+							<h1
+								style={{
+									textAlign: 'center',
+									textTransform: 'uppercase',
+									color: 'steelblue',
+								}}
+							>
+								Whoopsie! This page doesn't exist!
+							</h1>
+						)}
+					/>
 				</Switch>
 			</div>
 		)
