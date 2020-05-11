@@ -50,8 +50,7 @@ class App extends Component {
 				</ol>
 				<Switch>
 					<Route path="/users" component={Users} />
-					{/* Can pass additional params by adding more dynamic route URLs and then extracting them */}
-					<Route path="/courses/:courseID/:courseTitle" component={Course} />
+					<Route path="/courses/:courseID" component={Course} />
 					<Route path="/courses" component={Courses} />
 				</Switch>
 			</div>
