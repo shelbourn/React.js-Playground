@@ -5,7 +5,7 @@ class Course extends Component {
 		console.log(this.props)
 		return (
 			<div onClick={this.props.clicked}>
-				<h1></h1>
+				<h1>{this.props.match.params.query}</h1>
 				<p>
 					You selected the Course with ID: {this.props.match.params.courseID}
 				</p>
