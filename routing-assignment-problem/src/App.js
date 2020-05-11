@@ -49,9 +49,9 @@ class App extends Component {
 					</li>
 				</ol>
 				<Switch>
-					<Route path="/courses" component={Courses} />
 					<Route path="/users" component={Users} />
-					<Route path="/:id" component={Course} />
+					<Route path="/courses/:courseID" component={Course} />
+					<Route path="/courses" component={Courses} />
 				</Switch>
 			</div>
 		)

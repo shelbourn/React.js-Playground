@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 
 import './Courses.css'
 import '../Course/Course'
-import { Route } from 'react-router'
-import Course from '../Course/Course'
 
 class Courses extends Component {
 	state = {
@@ -16,7 +14,9 @@ class Courses extends Component {
 
 	// Wrapping each course tile with a link element
 	courseSelectedHandler = (id) => {
-		this.props.history.push({ pathname: this.props.match.url + '/course' })
+		this.props.history.push({
+			pathname: this.props.match.url + '/' + id,
+		})
 	}
 
 	render() {
