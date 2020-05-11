@@ -28,12 +28,12 @@ class App extends Component {
 							Add a simple navigation with two links => One leading to "Users",
 							one leading to "Courses"
 						</li> */}
-					<li>
+					{/* <li>
 						Make the courses in "Courses" clickable by adding a link and load
 						the "Course" component in the place of "Courses" (without passing
 						any data for now)
 					</li>
-					<li>Pass the course ID to the "Course" page and output it there</li>
+					<li>Pass the course ID to the "Course" page and output it there</li> */}
 					<li>
 						Pass the course title to the "Course" page - pass it as a param or
 						score bonus points by passing it as query params (you need to
@@ -50,7 +50,8 @@ class App extends Component {
 				</ol>
 				<Switch>
 					<Route path="/users" component={Users} />
-					<Route path="/courses/:courseID" component={Course} />
+					{/* Can pass additional params by adding more dynamic route URLs and then extracting them */}
+					<Route path="/courses/:courseID/:courseTitle" component={Course} />
 					<Route path="/courses" component={Courses} />
 				</Switch>
 			</div>

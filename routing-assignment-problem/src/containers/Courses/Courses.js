@@ -13,9 +13,9 @@ class Courses extends Component {
 	}
 
 	// Wrapping each course tile with a link element
-	courseSelectedHandler = (id) => {
+	courseSelectedHandler = (id, title) => {
 		this.props.history.push({
-			pathname: this.props.match.url + '/' + id,
+			pathname: this.props.match.url + '/' + id + '/' + title,
 		})
 	}
 
@@ -28,7 +28,9 @@ class Courses extends Component {
 					{this.state.courses.map((course) => {
 						return (
 							<article
-								onClick={() => this.courseSelectedHandler(course.id)}
+								onClick={() =>
+									this.courseSelectedHandler(course.id, course.title)
+								}
 								className="Course"
 								key={course.id}
 							>
