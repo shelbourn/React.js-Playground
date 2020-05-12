@@ -11,6 +11,7 @@ a {
 	font-size: medium;
 	text-transform: uppercase;
 	font-weight: bold;
+	height: 100%;
 }
 
 .active,
@@ -21,9 +22,24 @@ a:hover {
 ul {
 	background-color: lightblue;
 	height: 100%;
+	width: auto;
+	list-style: none;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	margin: 0;
 }
 
 li {
 	padding: 16px;
 	height: 100%;
+	width: auto;
+	display: block;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+li:active,
+li:hover {
+	background-color: lightgrey;
 }
