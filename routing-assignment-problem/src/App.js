@@ -9,11 +9,11 @@ class App extends Component {
 		return (
 			<div className="App">
 				<header>
-					<ul>
-						<li>
+					<ul style={{ listStyleType: 'none', margin: 'auto', padding: 0 }}>
+						<li style={{ display: 'inline-block', margin: 0 }}>
 							<NavLink to="/courses">Courses</NavLink>
 						</li>
-						<li>
+						<li style={{ display: 'inline-block', margin: 0 }}>
 							<NavLink to="/users">Users</NavLink>
 						</li>
 					</ul>

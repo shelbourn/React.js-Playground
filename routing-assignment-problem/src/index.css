@@ -1,6 +1,29 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  text-align: center;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: steelblue;
+	font-size: medium;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.active,
+a:hover {
+	color: coral;
+}
+
+ul {
+	background-color: lightblue;
+	height: 100%;
+}
+
+li {
+	padding: 16px;
+	height: 100%;
 }
