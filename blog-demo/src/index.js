@@ -17,7 +17,7 @@ axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN'
 axios.defaults.headers.post['Authorization'] = 'application/json'
 
 //* Intercepts all http requests made throughout the app
-const requestInterceptor = axios.interceptors.request.use(
+axios.interceptors.request.use(
 	(request) => {
 		console.log(request)
 		//% Can (and should) edit request (config request) before
