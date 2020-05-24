@@ -25,14 +25,7 @@ const rootReducer = (state = initialState, action) => {
 			}
 			break
 	}
-
-	if (action.type === 'INC_COUNTER') {
-		//! ALWAYS UPDATE STATE IMMUTABLY BY MAKING A COPY AND UPDATING THE COPY
-		return {
-			...state,
-			counter: state.counter + 1,
-		}
-	}
+	//% state is returned if none of the switch statements are satisfied
 	return state
 }
 
@@ -51,3 +44,6 @@ store.dispatch({ type: 'ADD_COUNTER', countValue: 10 })
 console.log(store.getState())
 
 //? Redux Subscription
+//* Subscriptions inform the component that the state has been updated
+//* and re-rendering may be necessary
+//% This bypasses having to manually call .getState() to retrieve the current state
