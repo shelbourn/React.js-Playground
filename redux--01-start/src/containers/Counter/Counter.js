@@ -75,6 +75,19 @@ const mapStateToProps = (state) => {
 	}
 }
 
+/***
+ * * connect lets us access store also and we can create
+ * * a function to interact with it.
+ * * onIncrementCounter is a React prop
+ * * onIncrementCounter calls an anonymous function that returns a call
+ * * to the dispatch() function
+ */
+const mapDispatchToProps = (dispatch) => {
+	return {
+		onIncrementCounter: () => dispatch(),
+	}
+}
+
 //* connect is a Redux function that returns a function that returns a HOC
 export default connect(mapStateToProps)(Counter)
 // export default Counter
