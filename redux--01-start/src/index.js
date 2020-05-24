@@ -5,14 +5,14 @@ import { Provider } from 'react-redux'
 import './index.css'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
-import reduxReducer from '../store/reducer'
+import reducer from './store/reducer'
 
 //* Creating Redux store and implementing reducer
-const reduxStore = createStore(reduxReducer)
+const store = createStore(reducer)
 
+//* Provider connects Redux to React and the store prop enable the Redux store
 ReactDOM.render(
-	//* Provider connects Redux to React and the store prop enable the Redux store
-	<Provider store={reduxStore}>
+	<Provider store={store}>
 		<App />
 	</Provider>,
 	document.getElementById('root')
