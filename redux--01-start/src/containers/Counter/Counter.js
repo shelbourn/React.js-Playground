@@ -46,7 +46,7 @@ class Counter extends Component {
 				<CounterOutput value={this.props.ctr} />
 				<CounterControl
 					label="Increment"
-					clicked={() => this.counterChangedHandler('inc')}
+					clicked={this.props.onIncrementCounter}
 				/>
 				<CounterControl
 					label="Decrement"
@@ -84,10 +84,11 @@ const mapStateToProps = (state) => {
  */
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onIncrementCounter: () => dispatch(),
+		onIncrementCounter: () => dispatch({ type: 'INCREMENT' }),
 	}
 }
 
 //* connect is a Redux function that returns a function that returns a HOC
-export default connect(mapStateToProps)(Counter)
+//* Can pass null as first argument to connect function if you only want to pass actions
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)
 // export default Counter
