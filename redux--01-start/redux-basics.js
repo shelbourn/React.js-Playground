@@ -11,6 +11,28 @@ const initialState = {
 //% (state = initialState, ...) is setting the state to a default value
 //% when the state is undefined
 const rootReducer = (state = initialState, action) => {
+	switch (action.type) {
+		case 'INC_COUNTER':
+			return {
+				...state,
+				counter: state.counter + 1,
+			}
+			break
+		case 'ADD_COUNTER':
+			return {
+				...state,
+				counter: state.counter + action.countValue,
+			}
+			break
+	}
+
+	if (action.type === 'INC_COUNTER') {
+		//! ALWAYS UPDATE STATE IMMUTABLY BY MAKING A COPY AND UPDATING THE COPY
+		return {
+			...state,
+			counter: state.counter + 1,
+		}
+	}
 	return state
 }
 
@@ -19,5 +41,13 @@ const store = createStore(rootReducer)
 console.log(store.getState())
 
 //? Redux Dispatching Action
+//% the .dispatch function takes a JS object as an arg which MUST include a
+//% 'type' key. The value can be any name, but the convention is
+//% an all UPPERCASE string
+//* Dispatch sends actions to the reducer for state updates
+//* In this case, 'INC_COUNTER' and 'ADD_COUNTER' will be sent to the reducer
+store.dispatch({ type: 'INC_COUNTER' })
+store.dispatch({ type: 'ADD_COUNTER', countValue: 10 })
+console.log(store.getState())
 
 //? Redux Subscription
