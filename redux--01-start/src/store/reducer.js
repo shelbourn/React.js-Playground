@@ -24,7 +24,7 @@ const reduxReducer = (state = initialState, action) => {
 			{
 				return {
 					...state,
-					counter: state.counter + 5,
+					counter: state.counter + action.payload.value,
 				}
 			}
 			break
@@ -32,7 +32,7 @@ const reduxReducer = (state = initialState, action) => {
 			{
 				return {
 					...state,
-					counter: state.counter - 5,
+					counter: state.counter - action.payload.value,
 				}
 			}
 			break
