@@ -8,6 +8,12 @@ const initialState = {
  * * such as action.payload.value (see Counter.js)
  */
 
+/***
+ * ! Always use .concat() to update arrays in state immutably and NOT .push()
+ * ! .push() will update the original state, even if the state has already been copied
+ * ! .concat() will add elements to a new copy of the array in state
+ */
+
 // No need for the break statement in this switch/case because
 // the return statement automatically exits and returns a value
 const reduxReducer = (state = initialState, action) => {
@@ -45,7 +51,7 @@ const reduxReducer = (state = initialState, action) => {
 				//! Use .concat() here because .push() does not update
 				//! the state immutably, it will still modify the original state
 				//! .concat() adds an array element to a copied array
-				results: state.results.concat(state.counter),
+				results: state.results.concat({ id: new Date(), value: state.counter }),
 			}
 		}
 	}
