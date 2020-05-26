@@ -58,14 +58,23 @@ const reduxReducer = (state = initialState, action) => {
 			//? Method one for copying/updating an array in state
 			//? Below will not create a deep clone so if the array contains objects
 			//? then those objects will have to be copied too
+			//? The .splice() method MUST be performed on a copy of the array in state
+			//? because .splice() will act on the original array if not
 			// const id = 2
 			// const newArray = [...state.results]
 			// newArray.splice(id, 1)
 
 			//? Method two for copying/updating an array in state
+			//? .filter() creates a new array whose elements meet the criteria
+			//? of the .filter() function
+			//? In this filter we are returning true if the element's ID does not match
+			//? the ID of the element we are receiving an action from (element clicked on to delete it)
+			const updatedArray = state.results.filter(
+				(result) => result.id !== action.payload.resultElementID
+			)
 			return {
 				...state,
-				results: newArray,
+				results: updatedArray,
 			}
 		}
 	}

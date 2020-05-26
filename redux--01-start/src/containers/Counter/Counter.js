@@ -61,7 +61,12 @@ class Counter extends Component {
 				<button onClick={this.props.onStoreResult}>Store Result</button>
 				<ul>
 					{this.props.storedResults.map((strResult) => (
-						<li key={strResult.id} onClick={this.props.onDeleteResult}>
+						<li
+							key={strResult.id}
+							// Passing this as an anonymous functions allows us to pass along data
+							// when dispatching from UI interactions
+							onClick={() => this.props.onDeleteResult(strResult.id)}
+						>
 							{strResult.value}
 						</li>
 					))}
@@ -100,7 +105,8 @@ const mapDispatchToProps = (dispatch) => {
 		onSubtractCounter: () =>
 			dispatch({ type: 'SUBTRACT', payload: { value: 15 } }),
 		onStoreResult: () => dispatch({ type: 'STORE_RESULT' }),
-		onDeleteResult: () => dispatch({ type: 'DELETE_RESULT' }),
+		onDeleteResult: (id) =>
+			dispatch({ type: 'DELETE_RESULT', payload: { resultElementID: id } }),
 	}
 }
 
