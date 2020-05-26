@@ -13,12 +13,13 @@ const initialState = {
 const reduxReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'INCREMENT': {
-			return {
-				...state,
-				counter: state.counter + 1,
-			}
+			// This is one way to copy state and update it immutably
+			const newState = Object.assign({}, state)
+			newState.counter = state.counter + 1
+			return newState
 		}
 		case 'DECREMENT': {
+			// This is another (shorter) way to copy & update state immutably
 			return {
 				...state,
 				counter: state.counter - 1,
@@ -34,6 +35,12 @@ const reduxReducer = (state = initialState, action) => {
 			return {
 				...state,
 				counter: state.counter - action.payload.value,
+			}
+		}
+		case 'STORE_RESULT': {
+			return {
+				...state,
+				results: state.results.push(state.counter),
 			}
 		}
 	}
