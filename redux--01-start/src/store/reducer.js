@@ -12,6 +12,30 @@ const reduxReducer = (state = initialState, action) => {
 				}
 			}
 			break
+		case 'DECREMENT':
+			{
+				return {
+					...state,
+					counter: state.counter - 1,
+				}
+			}
+			break
+		case 'ADD':
+			{
+				return {
+					...state,
+					counter: state.counter + 5,
+				}
+			}
+			break
+		case 'SUBTRACT':
+			{
+				return {
+					...state,
+					counter: state.counter - 5,
+				}
+			}
+			break
 	}
 	return state
 }
