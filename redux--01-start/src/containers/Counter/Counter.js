@@ -78,6 +78,9 @@ const mapStateToProps = (state) => {
  * * onIncrementCounter is a React prop
  * * onIncrementCounter calls an anonymous function that returns a call
  * * to the dispatch() function
+ *
+ * ? Can pass additional object properties along with the action to the reducer
+ * ? In this case we use {type: REQUIRED, payload: {ourObject: ...}}
  */
 const mapDispatchToProps = (dispatch) => {
 	return {

@@ -2,6 +2,11 @@ const initialState = {
 	counter: 0,
 }
 
+/***
+ * * Can pass additional object properties along with the action
+ * * such as action.payload.value (see Counter.js)
+ */
+
 const reduxReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'INCREMENT':
