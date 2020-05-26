@@ -54,6 +54,20 @@ const reduxReducer = (state = initialState, action) => {
 				results: state.results.concat({ id: new Date(), value: state.counter }),
 			}
 		}
+		case 'DELETE_RESULT': {
+			//? Method one for copying/updating an array in state
+			//? Below will not create a deep clone so if the array contains objects
+			//? then those objects will have to be copied too
+			// const id = 2
+			// const newArray = [...state.results]
+			// newArray.splice(id, 1)
+
+			//? Method two for copying/updating an array in state
+			return {
+				...state,
+				results: newArray,
+			}
+		}
 	}
 	//? This return statement returns the initial or current state if
 	//? no case is matched. If this return is absent, then the app will break
