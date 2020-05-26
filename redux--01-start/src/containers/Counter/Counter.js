@@ -57,6 +57,12 @@ class Counter extends Component {
 					label="Subtract"
 					clicked={this.props.onSubtractCounter}
 				/>
+        <hr/>
+        <button>Store Result
+          <ul>
+            <li></li>
+          </ul>
+        </button>
 			</div>
 		)
 	}
