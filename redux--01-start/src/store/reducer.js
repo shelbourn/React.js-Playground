@@ -36,6 +36,8 @@ const reduxReducer = (state = initialState, action) => {
 			}
 		}
 	}
+	//? This return statement returns the initial or current state if
+	//? no case is matched. If this return is absent, then the app will break
 	return state
 }
 
