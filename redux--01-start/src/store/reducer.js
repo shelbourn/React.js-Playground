@@ -14,12 +14,14 @@ const reduxReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'INCREMENT': {
 			// This is one way to copy state and update it immutably
+			// NOT A DEEP CLONE
 			const newState = Object.assign({}, state)
 			newState.counter = state.counter + 1
 			return newState
 		}
 		case 'DECREMENT': {
 			// This is another (shorter) way to copy & update state immutably
+			// NOT A DEEP CLONE
 			return {
 				...state,
 				counter: state.counter - 1,
@@ -40,7 +42,10 @@ const reduxReducer = (state = initialState, action) => {
 		case 'STORE_RESULT': {
 			return {
 				...state,
-				results: state.results.push(state.counter),
+				//! Use .concat() here because .push() does not update
+				//! the state immutably, it will still modify the original state
+				//! .concat() adds an array element to a copied array
+				results: state.results.concat(state.counter),
 			}
 		}
 	}
