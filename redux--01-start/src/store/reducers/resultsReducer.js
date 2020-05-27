@@ -1,5 +1,15 @@
 import * as actionTypes from '../actions'
 
+/***
+ * ? Component reducers will not have access to the global state.
+ * ? Therefore, properties much be passed from components that do have access to the global
+ * ? state to the component reducer
+ * 
+ * % For instance, below we need to access the current state value for counter
+ * % but we do not have access to that global state property in the resultsReducer
+ * % Therefore, we need to get the counter state value via an action payload.
+ */
+
 const initialState = {
 	results: [],
 }
@@ -25,7 +35,10 @@ const resultsReducer = (state = initialState, action) => {
 				//! Use .concat() here because .push() does not update
 				//! the state immutably, it will still modify the original state
 				//! .concat() adds an array element to a copied array
-				results: state.results.concat({ id: new Date(), value: state.counter }),
+				results: state.results.concat({
+					id: new Date(),
+					value: action.payload.result,
+				}),
 			}
 		}
 		case actionTypes.DELETE_RESULT: {

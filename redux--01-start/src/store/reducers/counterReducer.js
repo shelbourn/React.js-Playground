@@ -1,5 +1,11 @@
 import * as actionTypes from '../actions'
 
+/***
+ * ? Component reducers will not have access to the global state.
+ * ? Therefore, properties much be passed from components that do have access to the global
+ * ? state to the component reducer
+ */
+
 const initialState = {
 	counter: 0,
 }
