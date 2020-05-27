@@ -13,23 +13,25 @@ const reducer = (state = initialState, action) => {
 				age: Math.floor(Math.random() * 40),
 			}
 
+			// Adding new person to state array
 			return {
 				...state,
-				...state.persons,
 				persons: state.persons.concat(newPerson),
 			}
 		}
 
+		// Deleting person from state array
 		case actionTypes.DELETE_PERSON: {
+			const updatedPersons = state.persons.filter(
+				(person) => person.id !== action.payload.id
+			)
 			return {
 				...state,
-				...state.persons,
-				persons: state.persons.filter(
-					(person) => person.payload.id !== personId
-				),
+				persons: updatedPersons,
 			}
 		}
 	}
+	return state
 }
 
 export default reducer
