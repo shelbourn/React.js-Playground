@@ -32,7 +32,7 @@ class Persons extends Component {
 		return (
 			<div>
 				<AddPerson personAdded={this.props.onPersonAdded} />
-				{this.state.persons.map((person) => (
+				{this.props.pers.map((person) => (
 					<Person
 						key={person.id}
 						name={person.name}
