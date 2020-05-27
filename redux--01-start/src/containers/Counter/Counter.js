@@ -81,10 +81,17 @@ class Counter extends Component {
 //* state in this func is provided by Redux
 //* ctr can be named anything, but it is a React prop and refers to
 //* the counter property in state
+
+/***
+ * % Since counter and results each have their own partial state,
+ * % we must access their state properties like this:
+ * % state.ctr.counter and state.res.counter
+ * ! See index.js
+ */
 const mapStateToProps = (state) => {
 	return {
-		ctr: state.counter,
-		storedResults: state.results,
+		ctr: state.ctr.counter,
+		storedResults: state.res.results,
 	}
 }
 
