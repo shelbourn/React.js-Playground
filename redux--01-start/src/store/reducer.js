@@ -1,3 +1,5 @@
+import * as actionTypes from '../store/actions'
+
 const initialState = {
 	counter: 0,
 	results: [],
@@ -18,14 +20,14 @@ const initialState = {
 // the return statement automatically exits and returns a value
 const reduxReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case 'INCREMENT': {
+		case actionTypes.INCREMENT: {
 			// This is one way to copy state and update it immutably
 			// NOT A DEEP CLONE
 			const newState = Object.assign({}, state)
 			newState.counter = state.counter + 1
 			return newState
 		}
-		case 'DECREMENT': {
+		case actionTypes.DECREMENT: {
 			// This is another (shorter) way to copy & update state immutably
 			// NOT A DEEP CLONE
 			return {
@@ -33,19 +35,19 @@ const reduxReducer = (state = initialState, action) => {
 				counter: state.counter - 1,
 			}
 		}
-		case 'ADD': {
+		case actionTypes.ADD: {
 			return {
 				...state,
 				counter: state.counter + action.payload.value,
 			}
 		}
-		case 'SUBTRACT': {
+		case actionTypes.SUBTRACT: {
 			return {
 				...state,
 				counter: state.counter - action.payload.value,
 			}
 		}
-		case 'STORE_RESULT': {
+		case actionTypes.STORE_RESULT: {
 			return {
 				...state,
 				//! Use .concat() here because .push() does not update
@@ -54,7 +56,7 @@ const reduxReducer = (state = initialState, action) => {
 				results: state.results.concat({ id: new Date(), value: state.counter }),
 			}
 		}
-		case 'DELETE_RESULT': {
+		case actionTypes.DELETE_RESULT: {
 			//? Method one for copying/updating an array in state
 			//? Below will not create a deep clone so if the array contains objects
 			//? then those objects will have to be copied too
