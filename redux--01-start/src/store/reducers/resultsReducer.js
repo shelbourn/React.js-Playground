@@ -1,4 +1,4 @@
-import * as actionTypes from '../store/actions'
+import * as actionTypes from '../actions'
 
 const initialState = {
 	results: [],
