@@ -31,7 +31,7 @@ class Persons extends Component {
 	render() {
 		return (
 			<div>
-				<AddPerson personAdded={this.personAddedHandler} />
+				<AddPerson personAdded={this.props.onPersonAdded} />
 				{this.state.persons.map((person) => (
 					<Person
 						key={person.id}
@@ -56,6 +56,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		onPersonAdded: () => dispatch({ type: actionTypes.ADD_PERSON }),
+		onePersonDeleted: (id) =>
+			dispatch({ type: actionTypes.DELETE_PERSON, payload: { id: id } }),
 	}
 }
 
