@@ -5,9 +5,10 @@ import AddPerson from '../components/AddPerson/AddPerson'
 import * as actionTypes from '../store/actions'
 
 class Persons extends Component {
-	state = {
-		persons: [],
-	}
+	//! State in the component is not necessary with Redux
+	// state = {
+	// 	persons: [],
+	// }
 
 	render() {
 		return (
