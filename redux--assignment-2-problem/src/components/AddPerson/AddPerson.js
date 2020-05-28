@@ -1,13 +1,18 @@
-import React from 'react'
+import React {Component} from 'react'
 
 import './AddPerson.css'
+import { Component } from 'react'
 
-const addPerson = (props) => (
+class AddPerson extends Component {
+  render() {
+    return (
 	<div className="AddPerson">
 		<input type="text" placeholder="Name" />
 		<input type="number" placeholder="Age" />
-		<button onClick={props.personAdded}>Add Person</button>
+		<button onClick={this.props.personAdded}>Add Person</button>
 	</div>
-)
+    )
+  }
+}
 
 export default addPerson
