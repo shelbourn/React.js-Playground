@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-
 import './AddPerson.css'
-import { Component } from 'react'
+
+/***
+ * ? We can managed state locally here because it is only for
+ * ? local UI changes and two-way binding for input fields
+ */
 
 class AddPerson extends Component {
 	state = {
