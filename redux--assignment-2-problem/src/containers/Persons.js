@@ -37,7 +37,12 @@ const mapStateToProps = (state) => {
 // Mapping dispatch actions to props
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onPersonAdded: () => dispatch({ type: actionTypes.ADD_PERSON }),
+		// name and age arguments are received as props from AddPerson.js
+		onPersonAdded: (name, age) =>
+			dispatch({
+				type: actionTypes.ADD_PERSON,
+				payload: { name: name, age: age },
+			}),
 		onePersonDeleted: (id) =>
 			dispatch({ type: actionTypes.DELETE_PERSON, payload: { id: id } }),
 	}

@@ -9,7 +9,7 @@ import './AddPerson.css'
 class AddPerson extends Component {
 	state = {
 		name: '',
-		age: null,
+		age: '',
 	}
 
 	nameChangedHandler = (event) => {
@@ -17,7 +17,7 @@ class AddPerson extends Component {
 	}
 
 	ageChangedHandler = (event) => {
-		this.setState({ age: event.target.vale })
+		this.setState({ age: event.target.value })
 	}
 
 	/***
@@ -40,7 +40,15 @@ class AddPerson extends Component {
 					onChange={this.ageChangedHandler}
 					value={this.state.age}
 				/>
-				<button onClick={this.props.personAdded}>Add Person</button>
+				{/* Once the button is clicked then the name & age properties should
+        be stored in global state with Redux */}
+				<button
+					onClick={() =>
+						this.props.personAdded(this.state.name, this.state.age)
+					}
+				>
+					Add Person
+				</button>
 			</div>
 		)
 	}

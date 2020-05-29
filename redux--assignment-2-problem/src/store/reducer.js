@@ -9,8 +9,8 @@ const reducer = (state = initialState, action) => {
 		case actionTypes.ADD_PERSON: {
 			const newPerson = {
 				id: Math.random(),
-				name: 'Matt',
-				age: Math.floor(Math.random() * 40),
+				name: action.payload.name,
+				age: action.payload.age,
 			}
 
 			// Adding new person to state array
