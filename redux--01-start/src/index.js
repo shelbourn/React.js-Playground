@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import './index.css'
 import App from './App'
@@ -16,8 +16,26 @@ const rootReducer = combineReducers({
 	res: resultsReducer,
 })
 
-//* Creating Redux store and implementing reducer
-const reduxStore = createStore(rootReducer)
+/***
+ * ? Middleware is a function that is executed after an action is dispatched
+ * ? and before the store is updated with the new state without interrupting the
+ * ? process. Middleware is good for logging state changes, injecting methods, etc
+ */
+
+//* Creating middleware
+const logger = (store) => {
+	return (next) => {
+		return (action) => {
+			console.log('[Middleware] Dispatching', action)
+			const result = next(action)
+			console.log('[Middleware] next state', store.getState())
+			return result
+		}
+	}
+}
+
+//* Creating Redux store, implementing reducer, and applying middleware
+const reduxStore = createStore(rootReducer, applyMiddleware(logger))
 
 //* Provider connects Redux to React and the store prop enable the Redux store
 ReactDOM.render(
