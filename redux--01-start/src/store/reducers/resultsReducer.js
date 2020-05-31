@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions'
+import * as actionTypes from '../actions/actions'
 
 /***
  * ? Component reducers will not have access to the global state.
