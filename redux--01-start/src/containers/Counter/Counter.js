@@ -2,7 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CounterControl from '../../components/CounterControl/CounterControl'
 import CounterOutput from '../../components/CounterOutput/CounterOutput'
-import * as actionTypes from '../../store/actions/actions'
+import {
+	increment,
+	decrement,
+	add,
+	subtract,
+	storeResult,
+	deleteResult,
+} from '../../store/actions/actions'
 
 /*********
  * * With Redux, React Containers still manage state and pass it down
@@ -81,22 +88,19 @@ const mapStateToProps = (state) => {
  *
  * ? Can pass additional object properties along with the action to the reducer
  * ? In this case we use {type: REQUIRED, payload: {ourObject: ...}}
+ *
+ * % When using action creator functions (increment, decrement, etc) with dispatch
+ * % you must execute the functions on dispatch for them to create the action
+ * % eg: dispatch(increment())
  */
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onIncrementCounter: () => dispatch({ type: actionTypes.INCREMENT }),
-		onDecrementCounter: () => dispatch({ type: actionTypes.DECREMENT }),
-		onAddCounter: () =>
-			dispatch({ type: actionTypes.ADD, payload: { value: 10 } }),
-		onSubtractCounter: () =>
-			dispatch({ type: actionTypes.SUBTRACT, payload: { value: 15 } }),
-		onStoreResult: (result) =>
-			dispatch({ type: actionTypes.STORE_RESULT, payload: { result: result } }),
-		onDeleteResult: (id) =>
-			dispatch({
-				type: actionTypes.DELETE_RESULT,
-				payload: { resultElementID: id },
-			}),
+		onIncrementCounter: () => dispatch(increment()),
+		onDecrementCounter: () => dispatch(decrement()),
+		onAddCounter: () => dispatch(add(10)),
+		onSubtractCounter: () => dispatch(subtract(15)),
+		onStoreResult: (result) => dispatch(storeResult(result)),
+		onDeleteResult: (id) => dispatch(deleteResult(id)),
 	}
 }
 
