@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import './index.css'
 import App from './App'
@@ -35,8 +35,14 @@ const logger = (store) => {
 	}
 }
 
+//* Adding gloabl variable to enable Redux DEVTOOLS
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
 //* Creating Redux store, implementing reducer, and applying middleware
-const reduxStore = createStore(rootReducer, applyMiddleware(logger))
+const reduxStore = createStore(
+	rootReducer,
+	composeEnhancers(applyMiddleware(logger))
+)
 
 //* Provider connects Redux to React and the store prop enable the Redux store
 ReactDOM.render(
