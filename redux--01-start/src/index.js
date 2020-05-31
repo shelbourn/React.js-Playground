@@ -19,7 +19,8 @@ const rootReducer = combineReducers({
 /***
  * ? Middleware is a function that is executed after an action is dispatched
  * ? and before the store is updated with the new state without interrupting the
- * ? process. Middleware is good for logging state changes, injecting methods, etc
+ * ? process. Middleware is good for logging state changes, injecting methods, and
+ * ? handling async code.
  */
 
 //* Creating middleware
